@@ -26,13 +26,28 @@ struct OverviewData {
     //var dateAdded: Date
 }
 
-class ViewController: UIViewController {
+extension Date {
 
+    func totalDistance(from date: Date, resultIn component: Calendar.Component) -> Int? {
+        return Calendar.current.dateComponents([component], from: self, to: date).value(for: component)
+    }
+
+    func compare(with date: Date, only component: Calendar.Component) -> Int {
+        let days1 = Calendar.current.component(component, from: self)
+        let days2 = Calendar.current.component(component, from: date)
+        return days1 - days2
+    }
+
+    func hasSame(_ component: Calendar.Component, as date: Date) -> Bool {
+        return self.compare(with: date, only: component) == 0
+    }
+}
+
+class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchOverview()
-        
     }
 
     
@@ -63,10 +78,22 @@ class ViewController: UIViewController {
     print(today)
     print(day)
     for song in songs{
-//        let then = song.dateAdded
-//        let cal1 =
+        let then = song.dateAdded
+        let calendar = Calendar.current
+
+        let hour = calendar.component(.hour, from: then)
+        let day = calendar.component(.day, from: then)
+        let year = calendar.component(.year, from: then)
+        let month = calendar.component(.month, from:then)
+        if (month == calendar.component(.month, from: today)){
+            if (day == calendar.component(.day, from: today)){
+                print("SONG IS \(song.title!)->\(year)")
+            }
+        }
+        let minutes = calendar.component(.minute, from: then)
+        let seconds = calendar.component(.second, from: then)
         
-        all = all + ("\n\(song.title!)->\(song.dateAdded)")
+        all = all + ("\n\(String(day))->\(song.title!)->\(song.dateAdded)")
         label.text = all
     }
     
