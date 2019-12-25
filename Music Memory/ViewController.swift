@@ -10,7 +10,7 @@ import UIKit
 import MediaPlayer
 import StoreKit
 import Foundation
-
+import SwiftVideoBackground
 
 struct OverviewData {
     var topGenre: String
@@ -47,6 +47,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        try? VideoBackground.shared.play(view: view, videoName: "start", videoType: "mp4")
         fetchOverview()
     }
 
@@ -77,6 +78,7 @@ class ViewController: UIViewController {
     
     print(today)
     print(day)
+    var onThisDay: String = ""
     for song in songs{
         let then = song.dateAdded
         let calendar = Calendar.current
@@ -86,15 +88,16 @@ class ViewController: UIViewController {
         let year = calendar.component(.year, from: then)
         let month = calendar.component(.month, from:then)
         if (month == calendar.component(.month, from: today)){
+            onThisDay = onThisDay + "\n\(song.title!) in DEC \(day) -> \(year)"
             if (day == calendar.component(.day, from: today)){
-                print("SONG IS \(song.title!)->\(year)")
+                onThisDay = onThisDay + ("\nON THIS DAY IN \(year) YOU ADDED -> \(song.title!)")
             }
         }
         let minutes = calendar.component(.minute, from: then)
         let seconds = calendar.component(.second, from: then)
-        
-        all = all + ("\n\(String(day))->\(song.title!)->\(song.dateAdded)")
-        label.text = all
+        label.text = onThisDay
+        //all = all + ("\n\(String(day))->\(song.title!)->\(song.dateAdded)")
+        //label.text = all
     }
     
     return OverviewData(
