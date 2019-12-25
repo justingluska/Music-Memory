@@ -56,8 +56,16 @@ class ViewController: UIViewController {
     
     
     var all:String = ""
+    let today = Date()
+    let cal = Calendar.current
+    let day = cal.ordinality(of: .day, in: .year, for: today)
     
+    print(today)
+    print(day)
     for song in songs{
+//        let then = song.dateAdded
+//        let cal1 =
+        
         all = all + ("\n\(song.title!)->\(song.dateAdded)")
         label.text = all
     }
