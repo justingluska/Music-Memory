@@ -45,14 +45,35 @@ extension Date {
 
 class ViewController: UIViewController {
     
+    
+    
+    
+    @IBOutlet weak var imageViewOutlet: UIImageView!
+    var test: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         try? VideoBackground.shared.play(view: view, videoName: "start", videoType: "mp4")
         fetchOverview()
+        //Grab the controller
     }
+    
+    @IBOutlet weak var buttonOutlet: UIButton!
+    @IBAction func buttonTest(_ sender: Any) {
+        let sysMP : MPMusicPlayerController & MPSystemMusicPlayerController = MPMusicPlayerController.systemMusicPlayer;
 
+        //Grab current playing
+        let currItem : MPMediaItem? = sysMP.nowPlayingItem;
+
+        //Grab currItem's artwork
+        let image : UIImage? = currItem?.artwork?.image(at: CGSize(width: 200, height: 200));
+        imageViewOutlet.image = image
+//        buttonOutlet.setBackgroundImage(image, for: .normal)
+    }
     
     @IBOutlet weak var label: UITextView!
+    
+    
     
     
    func fetchOverview() -> OverviewData? {
@@ -76,8 +97,13 @@ class ViewController: UIViewController {
     let cal = Calendar.current
     let day = cal.ordinality(of: .day, in: .year, for: today)
     
+    var songName: Array = [""]
+    var songArtist: Array = [""]
+    var songPlays: Array = [""]
+    
     print(today)
     print(day)
+    var totals:Int = 0
     var onThisDay: String = ""
     for song in songs{
         let then = song.dateAdded
@@ -87,18 +113,30 @@ class ViewController: UIViewController {
         let day = calendar.component(.day, from: then)
         let year = calendar.component(.year, from: then)
         let month = calendar.component(.month, from:then)
+        
         if (month == calendar.component(.month, from: today)){
-            onThisDay = onThisDay + "\n\(song.title!) in DEC \(day) -> \(year)"
+            //onThisDay = onThisDay + "\n\(song.title!) in DEC \(day) -> \(year)"
             if (day == calendar.component(.day, from: today)){
                 onThisDay = onThisDay + ("\nON THIS DAY IN \(year) YOU ADDED -> \(song.title!)")
+                songName.append(song.title!)
+                songArtist.append(song.artist!)
+                songPlays.append(String(song.playCount))
+                totals += 1
+                buttonOutlet.setTitle(song.albumArtist, for: .normal)
             }
         }
+        
+        
         let minutes = calendar.component(.minute, from: then)
         let seconds = calendar.component(.second, from: then)
         label.text = onThisDay
         //all = all + ("\n\(String(day))->\(song.title!)->\(song.dateAdded)")
         //label.text = all
     }
+    for number in 0..<(totals-1){
+        print("\(songName[number]) -> \(songArtist[number]) -> PLAYS: \(songPlays[number])")
+    }
+    
     
     return OverviewData(
         topGenre: topGenre.0,
