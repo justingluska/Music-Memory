@@ -25,7 +25,6 @@ class InterestCollectionViewCell: UICollectionViewCell
         if let interest = interest {
             featuredImageView.image = interest.featuredImage
             interestTitleLabel.text = interest.title
-            backgroundColorView.backgroundColor = interest.color
         }
         else {
             featuredImageView.image = nil

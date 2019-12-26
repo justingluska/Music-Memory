@@ -7,26 +7,28 @@
 //
 
 import UIKit
+import Foundation
+import MediaPlayer
+import StoreKit
 
 class Interest {
     
     var title = ""
     var featuredImage: UIImage
-    var color: UIColor
     
-    init(title: String, featuredImage: UIImage, color: UIColor){
+    init(title: String, featuredImage: UIImage){
         self.title = title
         self.featuredImage = featuredImage
-        self.color = color
     }
     
     static func fetchInterests() -> [Interest]
     {
         return [
-            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!, color:UIColor(red: 63/255.0, green: 71/255.0, blue:80/255.0, alpha:0.8)),
-            Interest(title: "Boy Back (feat. Nav)", featuredImage: UIImage(named: "image")!, color:UIColor(red: 63/255.0, green: 71/255.0, blue:80/255.0, alpha:0.8)),
-            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!, color:UIColor(red: 63/255.0, green: 71/255.0, blue:80/255.0, alpha:0.8))
+            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!),
+            Interest(title: "Boy Back (feat. Nav)", featuredImage: UIImage(named: "image")!),
+            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!)
         
         ]
     }
 }
+

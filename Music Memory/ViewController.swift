@@ -43,10 +43,20 @@ extension Date {
     }
 }
 
+class TodaySong{
+    var name:String
+    
+    init(name: String) {
+      self.name = name
+    }
+    
+    func display(){
+        print(self.name)
+    }
+}
+    
+
 class ViewController: UIViewController {
-    
-    
-    
     
     @IBOutlet weak var imageViewOutlet: UIImageView!
     var test: UIImage!
@@ -118,7 +128,7 @@ class ViewController: UIViewController {
         if (month == calendar.component(.month, from: today)){
             //onThisDay = onThisDay + "\n\(song.title!) in DEC \(day) -> \(year)"
             if (day == calendar.component(.day, from: today)){
-                onThisDay = onThisDay + ("\nON THIS DAY IN \(year) YOU ADDED -> \(song.title!)")
+                onThisDay = onThisDay + ("\n\(year) TODAY -> \(song.title!) by \(song.artist!)\n")
                 songName.append(song.title!)
                 songArtist.append(song.artist!)
                 songPlays.append(String(song.playCount))
@@ -126,17 +136,20 @@ class ViewController: UIViewController {
                 buttonOutlet.setTitle(song.albumArtist, for: .normal)
             }
         }
+        else {
+
+        }
         
         
-        let minutes = calendar.component(.minute, from: then)
-        let seconds = calendar.component(.second, from: then)
-        label.text = onThisDay
+//        let minutes = calendar.component(.minute, from: then)
+//        let seconds = calendar.component(.second, from: then)
+       label.text = onThisDay
         //all = all + ("\n\(String(day))->\(song.title!)->\(song.dateAdded)")
         //label.text = all
     }
-    for number in 0..<(totals-1){
-        print("\(songName[number]) -> \(songArtist[number]) -> PLAYS: \(songPlays[number])")
-    }
+//    for number in 0..<(totals-1){
+//        print("\(songName[number]) -> \(songArtist[number]) -> PLAYS: \(songPlays[number])")
+//    }
     
     
     return OverviewData(
