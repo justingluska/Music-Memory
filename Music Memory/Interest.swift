@@ -23,11 +23,12 @@ class Interest {
     
     static func fetchInterests() -> [Interest]
     {
-        return [
-            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!),
-            Interest(title: "Boy Back (feat. Nav)", featuredImage: UIImage(named: "image")!),
-            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!)
         
+        return [
+            
+            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!)           ,
+            Interest(title: "Boy Back (feat. Nav)", featuredImage: UIImage(named: "image2")!),
+            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!)
         ]
     }
 }

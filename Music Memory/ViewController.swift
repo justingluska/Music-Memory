@@ -12,6 +12,10 @@ import StoreKit
 import Foundation
 import SwiftVideoBackground
 
+class stupidArray{
+    
+}
+
 struct OverviewData {
     var topGenre: String
     var topArtist: String
@@ -43,20 +47,21 @@ extension Date {
     }
 }
 
-class TodaySong{
-    var name:String
-    
-    init(name: String) {
-      self.name = name
-    }
-    
-    func display(){
-        print(self.name)
-    }
-}
-    
+/// Begin Class
+//class ArrayTest {
+//    var arTest = [""]
+//    
+//    init(arTest: String){
+//        self.arTest = [arTest]
+//    }
+//    
+//    func add(){
+//        arTest.append("Yeah")
+//    }
+//}
 
 class ViewController: UIViewController {
+
     
     @IBOutlet weak var imageViewOutlet: UIImageView!
     var test: UIImage!
