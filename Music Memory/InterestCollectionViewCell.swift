@@ -14,6 +14,7 @@ class InterestCollectionViewCell: UICollectionViewCell
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var interestTitleLabel: UILabel!
     
+    
     var interest: Interest! {
         didSet {
             self.updateUI()
@@ -36,7 +37,5 @@ class InterestCollectionViewCell: UICollectionViewCell
         featuredImageView.layer.cornerRadius = 10.0
         featuredImageView.clipsToBounds = true
     }
-    
-    
     
 }

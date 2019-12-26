@@ -15,7 +15,6 @@ class InterestsViewController: UIViewController
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
         collectionView.dataSource = self
     }
 }
@@ -31,6 +30,7 @@ extension InterestsViewController: UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestCollectionViewCell", for: indexPath) as! InterestCollectionViewCell
         let interest = interests[indexPath.item]
         

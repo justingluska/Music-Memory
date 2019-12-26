@@ -23,7 +23,9 @@ class Interest {
     static func fetchInterests() -> [Interest]
     {
         return [
-            Interest(title: "Traveling Around The World", featuredImage: UIImage(named: "image")!, color:UIColor(red: 63/255.0, green: 71/255.0, blue:80/255.0, alpha:0.8))
+            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!, color:UIColor(red: 63/255.0, green: 71/255.0, blue:80/255.0, alpha:0.8)),
+            Interest(title: "Boy Back (feat. Nav)", featuredImage: UIImage(named: "image")!, color:UIColor(red: 63/255.0, green: 71/255.0, blue:80/255.0, alpha:0.8)),
+            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!, color:UIColor(red: 63/255.0, green: 71/255.0, blue:80/255.0, alpha:0.8))
         
         ]
     }
