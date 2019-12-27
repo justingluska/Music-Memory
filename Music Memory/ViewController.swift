@@ -62,16 +62,9 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var buttonOutlet: UIButton!
+    
     @IBAction func buttonTest(_ sender: Any) {
-        let sysMP : MPMusicPlayerController & MPSystemMusicPlayerController = MPMusicPlayerController.systemMusicPlayer;
-
-        //Grab current playing
-        let currItem : MPMediaItem? = sysMP.nowPlayingItem;
-
-        //Grab currItem's artwork
-        let image : UIImage? = currItem?.artwork?.image(at: CGSize(width: 200, height: 200));
-        imageViewOutlet.image = image
-//        buttonOutlet.setBackgroundImage(image, for: .normal)
+        
     }
     
     @IBOutlet weak var label: UITextView!
@@ -83,7 +76,6 @@ class ViewController: UIViewController {
     guard let songs = MPMediaQuery.songs().items else {
         return nil
     }
-    
     var topGenre: (String, Int) = ("None", -1)
     var topArtist = ("None", -1)
     var topSong = ("None", -1)
@@ -126,11 +118,13 @@ class ViewController: UIViewController {
                 songPlays.append(String(song.playCount))
                 totals += 1
                 buttonOutlet.setTitle(song.albumArtist, for: .normal)
-                var displayImage = UIImage()
-                let artwork = MPMediaItemArtwork.init(boundsSize: displayImage.size, requestHandler: { (size) -> UIImage in
-                        return displayImage
-                })
-                imageViewOutlet.image = displayImage
+                imageViewOutlet.image = song.artwork?.image(at: imageViewOutlet.frame.size)
+//                var displayImage = UIImage()
+//                let artwork = MPMediaItemArtwork.init(boundsSize: displayImage.size, requestHandler: { (size) -> UIImage in
+//                        return displayImage
+//                })
+//                buttonOutlet.setImage(displayImage, for: .normal)
+
             }
         }
         else {
