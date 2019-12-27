@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="no access to library - restart app once given" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fI6-2n-jp7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="no access to library - restart app once given" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fI6-2n-jp7">
                                 <rect key="frame" x="10" y="79" width="384" height="783"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
