@@ -47,19 +47,6 @@ extension Date {
     }
 }
 
-/// Begin Class
-//class ArrayTest {
-//    var arTest = [""]
-//    
-//    init(arTest: String){
-//        self.arTest = [arTest]
-//    }
-//    
-//    func add(){
-//        arTest.append("Yeah")
-//    }
-//}
-
 class ViewController: UIViewController {
 
     
@@ -139,6 +126,11 @@ class ViewController: UIViewController {
                 songPlays.append(String(song.playCount))
                 totals += 1
                 buttonOutlet.setTitle(song.albumArtist, for: .normal)
+                var displayImage = UIImage()
+                let artwork = MPMediaItemArtwork.init(boundsSize: displayImage.size, requestHandler: { (size) -> UIImage in
+                        return displayImage
+                })
+                imageViewOutlet.image = displayImage
             }
         }
         else {
