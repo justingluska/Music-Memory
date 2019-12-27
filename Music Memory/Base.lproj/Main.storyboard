@@ -39,21 +39,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chf-wd-JBv">
-                                <rect key="frame" x="184" y="782" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="100" y="782" width="214" height="30"/>
+                                <state key="normal" title="open card view"/>
                                 <connections>
                                     <segue destination="BLt-vt-bGR" kind="show" id="VuX-Ea-PGo"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAx-Qb-BUL">
-                                <rect key="frame" x="82" y="384" width="240" height="128"/>
+                                <rect key="frame" x="51" y="259" width="312" height="333"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Chf-wd-JBv" secondAttribute="trailing" constant="184" id="4bM-Qt-aEd"/>
-                            <constraint firstItem="Chf-wd-JBv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="184" id="vHA-mn-0y4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Chf-wd-JBv" secondAttribute="trailing" constant="100" id="4bM-Qt-aEd"/>
+                            <constraint firstItem="Chf-wd-JBv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="vHA-mn-0y4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Chf-wd-JBv" secondAttribute="bottom" constant="50" id="zj0-2W-TZA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -76,8 +76,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs from Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rt-za-V6e">
-                                <rect key="frame" x="18" y="20" width="261" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs from Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rt-za-V6e">
+                                <rect key="frame" x="18" y="20" width="378" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -157,6 +157,7 @@
                             <constraint firstItem="H2K-xJ-B1J" firstAttribute="top" secondItem="SE8-vs-TOp" secondAttribute="bottom" constant="16" id="7Ll-3b-w0y"/>
                             <constraint firstItem="SE8-vs-TOp" firstAttribute="top" secondItem="6rt-za-V6e" secondAttribute="bottom" constant="15" id="DZC-XG-lx3"/>
                             <constraint firstItem="H2K-xJ-B1J" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="16" id="F9s-lt-97m"/>
+                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="6rt-za-V6e" secondAttribute="trailing" constant="18" id="GrO-qj-swf"/>
                             <constraint firstItem="SE8-vs-TOp" firstAttribute="trailing" secondItem="9bs-fM-6tM" secondAttribute="trailingMargin" constant="5" id="PZo-1X-0z0"/>
                             <constraint firstItem="tN6-ur-8MD" firstAttribute="centerX" secondItem="SE8-vs-TOp" secondAttribute="centerX" id="WI9-PG-Xd3"/>
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="H2K-xJ-B1J" secondAttribute="trailing" constant="16" id="eRx-Y2-ypi"/>

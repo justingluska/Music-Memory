@@ -13,6 +13,8 @@ import StoreKit
 
 class Interest {
     
+   
+    
     var title = ""
     var featuredImage: UIImage
     

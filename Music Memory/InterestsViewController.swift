@@ -11,7 +11,10 @@ import UIKit
 class InterestsViewController: UIViewController
 {
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var interests = Interest.fetchInterests()
+    
+    
     
     @IBOutlet weak var songsFromTodayLabel: UILabel!
     override func viewDidLoad(){
