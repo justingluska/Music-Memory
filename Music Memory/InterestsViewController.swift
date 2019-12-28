@@ -18,11 +18,17 @@ class InterestsViewController: UIViewController
     let cellScale: CGFloat = 0.6
     
     @IBOutlet weak var songsFromTodayLabel: UILabel!
+
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         try? VideoBackground.shared.play(view: view, videoName: "statsNew", videoType: "mp4")
         collectionView.dataSource = self
         collectionView.layer.cornerRadius = 10
+        let today = Date()
+        let cal = Calendar.current
+        let day = cal.ordinality(of: .day, in: .year, for: today)
+        songsFromTodayLabel.text = "Songs Added On Day \(day!)"
 //        let screenSize = UIScreen.main.bounds.size
 //        let cellWidth = floor(screenSize.width * cellScale)
 //        let cellHeight = floor(screenSize.height * cellScale)

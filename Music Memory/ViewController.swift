@@ -59,7 +59,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         try? VideoBackground.shared.play(view: view, videoName: "newstart", videoType: "mp4")
         fetchOverview()
-        //Grab the controller
+//        var job = Interest(title: "lets see if this works", featuredImage: UIImage(named: "sin")!)
+//        job.title = "yeah"
+//        print(job.title)
     }
     
     
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var label: UITextView!
     
-    
+    var songArray: NSMutableArray = []
     
     
    func fetchOverview() -> OverviewData? {
@@ -95,21 +97,19 @@ class ViewController: UIViewController {
     let day = cal.ordinality(of: .day, in: .year, for: today)
 
     
-    print(today)
-    print(day)
+    //print(today)
+    //print(day!)
     var totals:Int = 0
     var onThisDay: String = ""
     for song in songs{
         let then = song.dateAdded
         let calendar = Calendar.current
 
-        let hour = calendar.component(.hour, from: then)
         let day = calendar.component(.day, from: then)
         let year = calendar.component(.year, from: then)
         let month = calendar.component(.month, from:then)
         
         if (month == calendar.component(.month, from: today)){
-            //onThisDay = onThisDay + "\n\(song.title!) in DEC \(day) -> \(year)"
             if (day == calendar.component(.day, from: today)){
                 songName.append("\(song.title!)")
                 songArtist.append("\(song.artist!)")
@@ -117,6 +117,21 @@ class ViewController: UIViewController {
                 totals += 1
                 buttonOutlet.setTitle("SHARE \(song.albumArtist!)", for: .normal)
                 imageViewOutlet.image = song.artwork?.image(at: imageViewOutlet.frame.size)
+                
+                
+                
+                /// DEBUG
+                
+                
+                
+                let tempName = Interest(title: "Sin (feat. Jaden Smith)", featuredImage: UIImage(named: "sin")!)
+                songArray.add(tempName)
+                
+                
+                
+                /// DEBUG
+                
+                
                 if (year == calendar.component(.year, from: today)){
                     onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
                 }
@@ -143,7 +158,6 @@ class ViewController: UIViewController {
 //    for number in 0..<(totals-1){
 //        print("\(songName[number]) -> \(songArtist[number]) -> PLAYS: \(songPlays[number])")
 //    }
-    
     
     return OverviewData(
         topGenre: topGenre.0,

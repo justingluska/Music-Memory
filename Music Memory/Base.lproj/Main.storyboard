@@ -102,8 +102,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="702"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQ3-Ur-cRU">
+                                                    <rect key="frame" x="-9" y="181" width="400" height="340"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-tk-I5l">
                                                     <rect key="frame" x="-9" y="151" width="400" height="400"/>
+                                                    <color key="backgroundColor" red="0.21284052096408934" green="0.33000001311302185" blue="0.23202144384237261" alpha="0.18894477739726026" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="400" id="Kzt-My-16J"/>
                                                         <constraint firstAttribute="width" constant="400" id="hTZ-ZP-wGd"/>
@@ -115,9 +120,6 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQ3-Ur-cRU">
-                                                    <rect key="frame" x="-9" y="181" width="400" height="340"/>
-                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zQ3-Ur-cRU" firstAttribute="centerY" secondItem="hUV-NB-dWa" secondAttribute="centerY" id="11Z-g1-DCZ"/>

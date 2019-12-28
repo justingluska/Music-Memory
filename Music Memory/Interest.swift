@@ -11,6 +11,7 @@ import Foundation
 import MediaPlayer
 import StoreKit
 
+
 class Interest {
     
    
@@ -23,13 +24,14 @@ class Interest {
         self.featuredImage = featuredImage
     }
     
-    
+
     
     static func fetchInterests() -> [Interest]
     {
 
         return [
-
+            
+            //Interest(title: "Sin (feat. Jaden Smith)", featuredImage: UIImage(named: "sin")!),
             Interest(title: "Hot (feat. Travis Scott)\nAdded in 2019", featuredImage: UIImage(named: "image")!)           ,
             Interest(title: "Boy Back (feat. Nav)\nAdded in 2019", featuredImage: UIImage(named: "image2")!),
             Interest(title: "Hot (feat. Travis Scott)\nAdded in 2019", featuredImage: UIImage(named: "image")!)
@@ -62,6 +64,7 @@ class Interest {
             avgSkips: Float(totalSkips) / Float(songs.count),
             explicitRatio: Float(totalExplicit) / Float(songs.count)
         )
+
         for todaySong in songs{
             let today = Date()
             let cal = Calendar.current

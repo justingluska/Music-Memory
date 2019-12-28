@@ -22,6 +22,7 @@ class InterestCollectionViewCell: UICollectionViewCell
     }
     
     func updateUI(){
+        
         if let interest = interest {
             featuredImageView.image = interest.featuredImage
             interestTitleLabel.text = interest.title
