@@ -30,14 +30,6 @@
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbk-q9-sq9">
-                                <rect key="frame" x="144" y="559" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="."/>
-                                <connections>
-                                    <action selector="buttonTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQJ-qC-CeV"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chf-wd-JBv">
                                 <rect key="frame" x="100" y="782" width="214" height="30"/>
                                 <state key="normal" title="open card view"/>
@@ -46,9 +38,20 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAx-Qb-BUL">
-                                <rect key="frame" x="51" y="259" width="312" height="333"/>
+                                <rect key="frame" x="51" y="390" width="312" height="333"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbk-q9-sq9">
+                                <rect key="frame" x="51" y="731" width="312" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="artist">
+                                    <color key="titleColor" red="0.60146335660000005" green="0.0" blue="0.039354827090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="artistClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ocg-Eg-DJ5"/>
+                                    <action selector="buttonTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQJ-qC-CeV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -100,20 +103,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-tk-I5l">
-                                                    <rect key="frame" x="-9" y="-49" width="400" height="800"/>
+                                                    <rect key="frame" x="-9" y="151" width="400" height="400"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="800" id="Kzt-My-16J"/>
+                                                        <constraint firstAttribute="height" constant="400" id="Kzt-My-16J"/>
                                                         <constraint firstAttribute="width" constant="400" id="hTZ-ZP-wGd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-NB-dWa">
-                                                    <rect key="frame" x="28" y="29.5" width="326" height="642"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-NB-dWa">
+                                                    <rect key="frame" x="28" y="29.5" width="326" height="643"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQ3-Ur-cRU">
-                                                    <rect key="frame" x="20" y="181" width="342" height="338"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQ3-Ur-cRU">
+                                                    <rect key="frame" x="-9" y="181" width="400" height="340"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -142,7 +145,7 @@
                                 <rect key="frame" x="189" y="796" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs from Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rt-za-V6e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs Added Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rt-za-V6e">
                                 <rect key="frame" x="18" y="53" width="378" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <nil key="textColor"/>

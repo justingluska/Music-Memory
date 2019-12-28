@@ -20,7 +20,7 @@ class InterestsViewController: UIViewController
     @IBOutlet weak var songsFromTodayLabel: UILabel!
     override func viewDidLoad(){
         super.viewDidLoad()
-        try? VideoBackground.shared.play(view: view, videoName: "stats", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "statsNew", videoType: "mp4")
         collectionView.dataSource = self
         collectionView.layer.cornerRadius = 10
 //        let screenSize = UIScreen.main.bounds.size

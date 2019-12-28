@@ -30,9 +30,9 @@ class Interest {
 
         return [
 
-            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!)           ,
-            Interest(title: "Boy Back (feat. Nav)", featuredImage: UIImage(named: "image2")!),
-            Interest(title: "Hot (feat. Travis Scott)", featuredImage: UIImage(named: "image")!)
+            Interest(title: "Hot (feat. Travis Scott)\nAdded in 2019", featuredImage: UIImage(named: "image")!)           ,
+            Interest(title: "Boy Back (feat. Nav)\nAdded in 2019", featuredImage: UIImage(named: "image2")!),
+            Interest(title: "Hot (feat. Travis Scott)\nAdded in 2019", featuredImage: UIImage(named: "image")!)
         ]
     }
     

@@ -12,9 +12,6 @@ import StoreKit
 import Foundation
 import SwiftVideoBackground
 
-class stupidArray{
-    
-}
 
 struct OverviewData {
     var topGenre: String
@@ -49,6 +46,11 @@ extension Date {
 
 class ViewController: UIViewController {
 
+    
+    
+    var songName = [String]()
+    var songArtist: Array = [""]
+    var songPlays: Array = [""]
     
     @IBOutlet weak var imageViewOutlet: UIImageView!
     var test: UIImage!
@@ -91,10 +93,7 @@ class ViewController: UIViewController {
     let today = Date()
     let cal = Calendar.current
     let day = cal.ordinality(of: .day, in: .year, for: today)
-    
-    var songName: Array = [""]
-    var songArtist: Array = [""]
-    var songPlays: Array = [""]
+
     
     print(today)
     print(day)
@@ -112,13 +111,18 @@ class ViewController: UIViewController {
         if (month == calendar.component(.month, from: today)){
             //onThisDay = onThisDay + "\n\(song.title!) in DEC \(day) -> \(year)"
             if (day == calendar.component(.day, from: today)){
-                onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
-                songName.append(song.title!)
-                songArtist.append(song.artist!)
+                songName.append("\(song.title!)")
+                songArtist.append("\(song.artist!)")
                 songPlays.append(String(song.playCount))
                 totals += 1
-                buttonOutlet.setTitle(song.albumArtist, for: .normal)
+                buttonOutlet.setTitle("SHARE \(song.albumArtist!)", for: .normal)
                 imageViewOutlet.image = song.artwork?.image(at: imageViewOutlet.frame.size)
+                if (year == calendar.component(.year, from: today)){
+                    onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
+                }
+                else {
+                    onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
+                }
 //                var displayImage = UIImage()
 //                let artwork = MPMediaItemArtwork.init(boundsSize: displayImage.size, requestHandler: { (size) -> UIImage in
 //                        return displayImage
@@ -127,9 +131,7 @@ class ViewController: UIViewController {
 
             }
         }
-        else {
-
-        }
+        
         
         
 //        let minutes = calendar.component(.minute, from: then)
@@ -155,6 +157,23 @@ class ViewController: UIViewController {
         avgSkips: Float(totalSkips) / Float(songs.count),
         explicitRatio: Float(totalExplicit) / Float(songs.count)
     )
+    }
+    
+    
+    @IBAction func artistClicked(_ sender: Any) {
+        shareMusic()
+    }
+    
+    func shareMusic(){
+        var songString:String = ""
+        for element in songName.indices.dropLast() {
+            songString = songName[element] + ", " + songString
+            print(songString)
+        }
+        songString = songString + "and " + songName[(songName.count-1)]
+        let items: [Any] = ["I discovered the music \(songString) on this day a year ago. See your throwback songs by downloading musicHop! ", URL(string: "https://www.justingluska.com")!, imageViewOutlet.image]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
 }
