@@ -31,9 +31,9 @@ class InterestCollectionViewCell: UICollectionViewCell
             interestTitleLabel.text = nil
             backgroundColorView.backgroundColor = nil
         }
-        backgroundColorView.layer.cornerRadius = 10.0
+        backgroundColorView.layer.cornerRadius = 30.0
         backgroundColorView.clipsToBounds = true
-        featuredImageView.layer.cornerRadius = 10.0
+        featuredImageView.layer.cornerRadius = 30.0
         featuredImageView.clipsToBounds = true
     }
     

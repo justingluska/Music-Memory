@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class InterestsViewController: UIViewController
 {
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var contentView: UIView!
     var interests = Interest.fetchInterests()
     
     @IBOutlet weak var songsFromTodayLabel: UILabel!
     override func viewDidLoad(){
         super.viewDidLoad()
+        try? VideoBackground.shared.play(view: view, videoName: "stats", videoType: "mp4")
         collectionView.dataSource = self
+        
     }
 }
 

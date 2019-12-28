@@ -84,14 +84,13 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SE8-vs-TOp" userLabel="Line View">
                                 <rect key="frame" x="25" y="71" width="374" height="1"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="9Aq-Ba-ZWx"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="InterestsViewController" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H2K-xJ-B1J">
                                 <rect key="frame" x="16" y="88" width="382" height="709"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="20" id="cP7-xB-BlX">
                                     <size key="itemSize" width="382" height="702"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -121,7 +120,6 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQ3-Ur-cRU">
                                                     <rect key="frame" x="20" y="181" width="342" height="338"/>
-                                                    <color key="backgroundColor" white="0.23878959760273974" alpha="0.56860017123287676" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
