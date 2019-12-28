@@ -112,7 +112,7 @@ class ViewController: UIViewController {
         if (month == calendar.component(.month, from: today)){
             //onThisDay = onThisDay + "\n\(song.title!) in DEC \(day) -> \(year)"
             if (day == calendar.component(.day, from: today)){
-                onThisDay = onThisDay + ("\n\(year) TODAY -> \(song.title!) by \(song.artist!)\n")
+                onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
                 songName.append(song.title!)
                 songArtist.append(song.artist!)
                 songPlays.append(String(song.playCount))
