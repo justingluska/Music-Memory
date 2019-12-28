@@ -168,10 +168,11 @@ class ViewController: UIViewController {
         var songString:String = ""
         for element in songName.indices.dropLast() {
             songString = songName[element] + ", " + songString
-            print(songString)
         }
         songString = songString + "and " + songName[(songName.count-1)]
-        let items: [Any] = ["I discovered the music \(songString) on this day a year ago. See your throwback songs by downloading musicHop! ", URL(string: "https://www.justingluska.com")!, imageViewOutlet.image]
+        let items: [Any] = ["I discovered the music \(songString) on this day a year ago. See your throwback songs by downloading musicHop! ", URL(string: "https://www.justingluska.com")!]
+        /// To add the album artwork, use the code below
+        // , imageViewOutlet.image!
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)
     }
