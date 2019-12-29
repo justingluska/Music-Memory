@@ -123,9 +123,9 @@ class ViewController: UIViewController {
                 /// DEBUG
                 
                 
-                
-                let tempName = Interest(title: "Sin (feat. Jaden Smith)", featuredImage: UIImage(named: "sin")!)
-                songArray.add(tempName)
+//                var list = [Interest]?.self
+//                let tempName = Interest(title: "Sin (feat. Jaden Smith)", featuredImage: UIImage(named: "sin")!)
+//                list.append(tempName)
                 
                 
                 

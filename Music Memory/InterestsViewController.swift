@@ -27,8 +27,8 @@ class InterestsViewController: UIViewController
         collectionView.layer.cornerRadius = 10
         let today = Date()
         let cal = Calendar.current
-        let day = cal.ordinality(of: .day, in: .year, for: today)
-        songsFromTodayLabel.text = "Songs Added On Day \(day!)"
+        //let day = cal.ordinality(of: .day, in: .year, for: today)
+        songsFromTodayLabel.text = "SONGS ADDED TODAY"
 //        let screenSize = UIScreen.main.bounds.size
 //        let cellWidth = floor(screenSize.width * cellScale)
 //        let cellHeight = floor(screenSize.height * cellScale)
