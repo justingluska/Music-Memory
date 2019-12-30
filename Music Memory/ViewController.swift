@@ -12,6 +12,33 @@ import StoreKit
 import Foundation
 import SwiftVideoBackground
 
+class songStats{
+    var title = ""
+    var artist = ""
+    var album = ""
+    var plays = 0
+    var hours = ""
+    var artwork: UIImage
+    
+    init(title: String, artist: String, album: String, plays: Int, hours: String, artwork: UIImage){
+        self.title = title
+        self.artist = artist
+        self.album = album
+        self.plays = plays
+        self.hours = hours
+        self.artwork = artwork
+    }
+    
+    func displayStats(){
+        print(self.title)
+        print(self.artist)
+        print(self.album)
+        print(self.plays)
+        print(self.hours)
+        print(type(of: self.artwork))
+    }
+}
+
 
 struct OverviewData {
     var totalPlays: Int
@@ -103,15 +130,22 @@ class ViewController: UIViewController {
                 buttonOutlet.setTitle("SHARE \(song.albumArtist!)", for: .normal)
                 imageViewOutlet.image = song.artwork?.image(at: imageViewOutlet.frame.size)
                 let tes = Interest(title: (song.title)!, featuredImage: UIImage(named: "image")!)
-                print(tes.title)
                 
-                /// FOR FIVERR:
+                /// FOR FIVERR: ^^^ CODE ABOVE
                 /// I would like to return the title of the song and the background image of the album artwork in the collection view, instead of the default songs I have to specify in Interest.Swift
                 /// Thank you!
+                
                 var timeListened = Double(song.playbackDuration)
-                timeListened = (timeListened * Double(song.playCount)) / 60
-                timeListened = Double(round(100*timeListened)/100)
-                textDisplay.text = "\(song.title!)\nby \(song.artist!)\n\(song.albumTitle!)\n\(song.playCount) Plays\nHours Listened: \(timeListened)"
+                timeListened = (timeListened / 60) * Double(song.playCount)
+                timeListened = Double(round(100*timeListened)/100) / 60
+                let newTime = String(format: "%.1f", timeListened)
+                
+                
+                let albumArt: UIImage = (song.artwork?.image(at: imageViewOutlet.frame.size))!
+                let entry = songStats(title: song.title!, artist: song.artist!, album: song.albumTitle!, plays: song.playCount, hours: newTime, artwork: UIImage(named: "image")!)
+                print(entry.displayStats())
+                
+                textDisplay.text = "\(song.title!)\nby \(song.artist!)\n\(song.albumTitle!)\n\(song.playCount) Plays\nHours Listened: \(newTime)"
                 
                 if (year == calendar.component(.year, from: today)){
                     onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
@@ -127,8 +161,11 @@ class ViewController: UIViewController {
 
             }
         }
+        else {
+            label.text = "No new songs today"
+        }
         
-        
+        //mprint(entry.displayStats())
         
 //        let minutes = calendar.component(.minute, from: then)
 //        let seconds = calendar.component(.second, from: then)
@@ -156,7 +193,7 @@ class ViewController: UIViewController {
             songString = songName[element] + ", " + songString
         }
         songString = songString + "and " + songName[(songName.count-1)]
-        let items: [Any] = ["I discovered the music \(songString) on this day a year ago. See your throwback songs by downloading musicHop! ", URL(string: "https://www.justingluska.com")!]
+        let items: [Any] = ["I discovered the music \(songString) on this day of the year. See your throwback songs by downloading musicHop! ", URL(string: "https://www.justingluska.com")!]
         /// To add the album artwork, use the code below
         // , imageViewOutlet.image!
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
