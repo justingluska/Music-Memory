@@ -14,16 +14,7 @@ import SwiftVideoBackground
 
 
 struct OverviewData {
-    var topGenre: String
-    var topArtist: String
-    var topSong: String
     var totalPlays: Int
-    var totalTime: TimeInterval
-    var numTracks: Int
-    var avgDuration: TimeInterval
-    var avgPlays: Float
-    var avgSkips: Float
-    var explicitRatio: Float
     //var dateAdded: Date
 }
 
@@ -64,6 +55,7 @@ class ViewController: UIViewController {
 //        print(job.title)
     }
     
+    @IBOutlet weak var textDisplay: UITextView!
     
     @IBOutlet weak var buttonOutlet: UIButton!
     
@@ -80,15 +72,8 @@ class ViewController: UIViewController {
     guard let songs = MPMediaQuery.songs().items else {
         return nil
     }
-    var topGenre: (String, Int) = ("None", -1)
-    var topArtist = ("None", -1)
-    var topSong = ("None", -1)
+
     var totalPlays: Int = 0
-    var totalTime: TimeInterval = 0
-    var totalDiscSize: Int = 0
-    var totalDurations: TimeInterval = 0
-    var totalExplicit: Int = 0
-    var totalSkips: Int = 0
     
     
     var all:String = ""
@@ -104,33 +89,29 @@ class ViewController: UIViewController {
     for song in songs{
         let then = song.dateAdded
         let calendar = Calendar.current
-
         let day = calendar.component(.day, from: then)
         let year = calendar.component(.year, from: then)
         let month = calendar.component(.month, from:then)
         
         if (month == calendar.component(.month, from: today)){
             if (day == calendar.component(.day, from: today)){
+                /// I want it to return all of the songs that get to this part in the CollectionView
                 songName.append("\(song.title!)")
                 songArtist.append("\(song.artist!)")
                 songPlays.append(String(song.playCount))
                 totals += 1
                 buttonOutlet.setTitle("SHARE \(song.albumArtist!)", for: .normal)
                 imageViewOutlet.image = song.artwork?.image(at: imageViewOutlet.frame.size)
+                let tes = Interest(title: (song.title)!, featuredImage: UIImage(named: "image")!)
+                print(tes.title)
                 
-                
-                
-                /// DEBUG
-                
-                
-//                var list = [Interest]?.self
-//                let tempName = Interest(title: "Sin (feat. Jaden Smith)", featuredImage: UIImage(named: "sin")!)
-//                list.append(tempName)
-                
-                
-                
-                /// DEBUG
-                
+                /// FOR FIVERR:
+                /// I would like to return the title of the song and the background image of the album artwork in the collection view, instead of the default songs I have to specify in Interest.Swift
+                /// Thank you!
+                var timeListened = Double(song.playbackDuration)
+                timeListened = (timeListened * Double(song.playCount)) / 60
+                timeListened = Double(round(100*timeListened)/100)
+                textDisplay.text = "\(song.title!)\nby \(song.artist!)\n\(song.albumTitle!)\n\(song.playCount) Plays\nHours Listened: \(timeListened)"
                 
                 if (year == calendar.component(.year, from: today)){
                     onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
@@ -160,16 +141,7 @@ class ViewController: UIViewController {
 //    }
     
     return OverviewData(
-        topGenre: topGenre.0,
-        topArtist: topArtist.0,
-        topSong: topSong.0,
-        totalPlays: totalPlays,
-        totalTime: totalTime,
-        numTracks: songs.count,
-        avgDuration: totalDurations / Double(songs.count),
-        avgPlays: Float(totalPlays) / Float(songs.count),
-        avgSkips: Float(totalSkips) / Float(songs.count),
-        explicitRatio: Float(totalExplicit) / Float(songs.count)
+        totalPlays: totalPlays
     )
     }
     

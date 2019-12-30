@@ -24,13 +24,13 @@ class Interest {
         self.featuredImage = featuredImage
     }
     
-
     
     static func fetchInterests() -> [Interest]
     {
 
         return [
             
+            Interest(title: "Yeah", featuredImage: UIImage(named: "image")!),
             //Interest(title: "Sin (feat. Jaden Smith)", featuredImage: UIImage(named: "sin")!),
             Interest(title: "Hot (feat. Travis Scott)\nAdded in 2019", featuredImage: UIImage(named: "image")!)           ,
             Interest(title: "Boy Back (feat. Nav)\nAdded in 2019", featuredImage: UIImage(named: "image2")!),
@@ -53,16 +53,7 @@ class Interest {
         return nil
     }
         return OverviewData(
-            topGenre: topGenre.0,
-            topArtist: topArtist.0,
-            topSong: topSong.0,
-            totalPlays: totalPlays,
-            totalTime: totalTime,
-            numTracks: songs.count,
-            avgDuration: totalDurations / Double(songs.count),
-            avgPlays: Float(totalPlays) / Float(songs.count),
-            avgSkips: Float(totalSkips) / Float(songs.count),
-            explicitRatio: Float(totalExplicit) / Float(songs.count)
+            totalPlays: totalPlays
         )
 
         for todaySong in songs{

@@ -52,6 +52,13 @@
                                     <action selector="buttonTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQJ-qC-CeV"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="VALUES" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO1-46-c3Q">
+                                <rect key="frame" x="51" y="390" width="312" height="333"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -65,6 +72,7 @@
                         <outlet property="buttonOutlet" destination="lbk-q9-sq9" id="SGj-DA-JD3"/>
                         <outlet property="imageViewOutlet" destination="NAx-Qb-BUL" id="5YF-8S-Bfe"/>
                         <outlet property="label" destination="fI6-2n-jp7" id="I7r-ed-PPB"/>
+                        <outlet property="textDisplay" destination="aO1-46-c3Q" id="w4m-c3-8bR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
