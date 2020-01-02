@@ -18,6 +18,8 @@ class InterestsViewController: UIViewController
     let cellScale: CGFloat = 0.6
     
     @IBOutlet weak var songsFromTodayLabel: UILabel!
+    
+    var dataSource : MusicWithDate = MusicWithDate()
 
     
     override func viewDidLoad(){
@@ -38,33 +40,43 @@ class InterestsViewController: UIViewController
 //        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
 //        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
 //        collectionView.contentInset = UIEdgeInsets(top: insetY, left:insetX, bottom:insetY, right:insetX)
-        collectionView.dataSource = self
+        //collectionView.delegate = self
+        collectionView.reloadData()
     }
 }
 
 extension InterestsViewController: UICollectionViewDataSource
 {
-    func numberOfSection(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return interests.count
+        //return interests.count
+        return self.dataSource.music.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestCollectionViewCell", for: indexPath) as! InterestCollectionViewCell
+        /*let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestCollectionViewCell", for: indexPath) as! InterestCollectionViewCell
         let interest = interests[indexPath.item]
         
         cell.interest = interest
+        
+        return cell*/
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestCollectionViewCell", for: indexPath) as! InterestCollectionViewCell
+        let interest = self.dataSource.music[indexPath.item]
+        
+        //cell.interest = interest
+        cell.dataSource = interest
         
         return cell
     }
     
 }
 
-extension InterestsViewController : UIScrollViewDelegate, UICollectionViewDelegate
+/*extension InterestsViewController : UIScrollViewDelegate, UICollectionViewDelegate
 {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
@@ -75,4 +87,4 @@ extension InterestsViewController : UIScrollViewDelegate, UICollectionViewDelega
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
         targetContentOffset.pointee = offset
     }
-}
+}*/

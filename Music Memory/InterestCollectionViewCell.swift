@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class InterestCollectionViewCell: UICollectionViewCell
 {
@@ -21,7 +22,13 @@ class InterestCollectionViewCell: UICollectionViewCell
         }
     }
     
-    func updateUI(){
+    var dataSource: MPMediaItem! {
+        didSet {
+            self.updateUI()
+        }
+    }
+    
+    /*func updateUI(){
         
         if let interest = interest {
             featuredImageView.image = interest.featuredImage
@@ -36,6 +43,20 @@ class InterestCollectionViewCell: UICollectionViewCell
         backgroundColorView.clipsToBounds = true
         featuredImageView.layer.cornerRadius = 30.0
         featuredImageView.clipsToBounds = true
+    }*/
+    
+    func updateUI(){
+        
+        if let image = self.dataSource.artwork?.image(at: featuredImageView.frame.size) {
+            self.featuredImageView.image = image
+        } else {
+            self.featuredImageView.image = UIImage.init(named: "image")
+        }
+        //featuredImageView.image = self.dataSource.artwork?.image(at: featuredImageView.frame.size)
+        interestTitleLabel.text = self.dataSource.title ?? ""
+        
+        //featuredImageView.layer.cornerRadius = 30.0
+        //featuredImageView.clipsToBounds = true
     }
     
 }

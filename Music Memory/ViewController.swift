@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     var songName = [String]()
     var songArtist: Array = [""]
     var songPlays: Array = [""]
+    var dataSource : [MusicWithDate] = []
     
     @IBOutlet weak var imageViewOutlet: UIImageView!
     var test: UIImage!
@@ -76,10 +77,43 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         try? VideoBackground.shared.play(view: view, videoName: "newstart", videoType: "mp4")
-        fetchOverview()
+        //fetchOverview()
 //        var job = Interest(title: "lets see if this works", featuredImage: UIImage(named: "sin")!)
 //        job.title = "yeah"
 //        print(job.title)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.groupSongs()
+        //Today's record
+        
+        if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
+            let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
+            switch order {
+            case .orderedDescending:
+                //print("DESCENDING")
+                return false
+            case .orderedAscending:
+                //print("ASCENDING")
+                return false
+            case .orderedSame:
+                //print("SAME")
+                return true
+            }
+        }).first {
+            //Show the name
+            var timeListened = Double(todaysRecord.music.first?.playbackDuration ?? 0)
+            timeListened = (timeListened / 60) * Double(todaysRecord.music.first?.playCount ?? 0)
+            timeListened = Double(round(100*timeListened)/100) / 60
+            let newTime = String(format: "%.1f", timeListened)
+            textDisplay.text = "\(todaysRecord.music.first?.title ?? "")\nby \(todaysRecord.music.first?.artist ?? "")\n\(todaysRecord.music.first?.albumTitle ?? "")\n\(todaysRecord.music.first?.playCount ?? 0) Plays\nHours Listened: \(newTime)"
+            if let image = todaysRecord.music.first?.artwork?.image(at: imageViewOutlet.frame.size) {
+                self.imageViewOutlet.image = image
+            } else {
+                self.imageViewOutlet.image = UIImage.init(named: "image")
+            }
+        }
     }
     
     @IBOutlet weak var textDisplay: UITextView!
@@ -95,7 +129,7 @@ class ViewController: UIViewController {
     var songArray: NSMutableArray = []
     
     
-   func fetchOverview() -> OverviewData? {
+   /*func fetchOverview() -> OverviewData? {
     guard let songs = MPMediaQuery.songs().items else {
         return nil
     }
@@ -124,12 +158,12 @@ class ViewController: UIViewController {
             if (day == calendar.component(.day, from: today)){
                 /// I want it to return all of the songs that get to this part in the CollectionView
                 songName.append("\(song.title!)")
-                songArtist.append("\(song.artist!)")
+                songArtist.append("\(song.artist ?? "No Name Avaialble")")
                 songPlays.append(String(song.playCount))
                 totals += 1
-                buttonOutlet.setTitle("SHARE \(song.albumArtist!)", for: .normal)
+                buttonOutlet.setTitle("SHARE \(song.albumArtist ?? "")", for: .normal)
                 imageViewOutlet.image = song.artwork?.image(at: imageViewOutlet.frame.size)
-                let tes = Interest(title: (song.title)!, featuredImage: UIImage(named: "image")!)
+                let tes = Interest(title: (song.title) ?? "", featuredImage: UIImage(named: "image")!)
                 
                 /// FOR FIVERR: ^^^ CODE ABOVE
                 /// I would like to return the title of the song and the background image of the album artwork in the collection view, instead of the default songs I have to specify in Interest.Swift
@@ -141,17 +175,17 @@ class ViewController: UIViewController {
                 let newTime = String(format: "%.1f", timeListened)
                 
                 
-                let albumArt: UIImage = (song.artwork?.image(at: imageViewOutlet.frame.size))!
-                let entry = songStats(title: song.title!, artist: song.artist!, album: song.albumTitle!, plays: song.playCount, hours: newTime, artwork: UIImage(named: "image")!)
+                let albumArt: UIImage = (song.artwork?.image(at: imageViewOutlet.frame.size)) ?? UIImage(named: "sin")!
+                let entry = songStats(title: song.title ?? "", artist: song.artist ?? "", album: song.albumTitle ?? "", plays: song.playCount, hours: newTime, artwork: UIImage(named: "image")!)
                 print(entry.displayStats())
                 
-                textDisplay.text = "\(song.title!)\nby \(song.artist!)\n\(song.albumTitle!)\n\(song.playCount) Plays\nHours Listened: \(newTime)"
+                textDisplay.text = "\(song.title ?? "")\nby \(song.artist ?? "")\n\(song.albumTitle ?? "")\n\(song.playCount) Plays\nHours Listened: \(newTime)"
                 
                 if (year == calendar.component(.year, from: today)){
-                    onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
+                    onThisDay = onThisDay + ("\nIN \(year) -> \(song.title ?? "") by \(song.artist ?? "")\n")
                 }
                 else {
-                    onThisDay = onThisDay + ("\nIN \(year) -> \(song.title!) by \(song.artist!)\n")
+                    onThisDay = onThisDay + ("\nIN \(year) -> \(song.title ?? "") by \(song.artist ?? "")\n")
                 }
 //                var displayImage = UIImage()
 //                let artwork = MPMediaItemArtwork.init(boundsSize: displayImage.size, requestHandler: { (size) -> UIImage in
@@ -180,6 +214,39 @@ class ViewController: UIViewController {
     return OverviewData(
         totalPlays: totalPlays
     )
+    }*/
+    
+    func groupSongs() {
+        guard let songs = MPMediaQuery.songs().items else {
+            return
+        }
+        
+        for eachSong in songs {
+            print("Date: \(eachSong.dateAdded), Title: \(eachSong.title)")
+            if let dateGroup = self.dataSource.filter({ (dateGroup) -> Bool in
+                let order = Calendar.current.compare(eachSong.dateAdded, to: dateGroup.date, toGranularity: .day)
+                switch order {
+                case .orderedDescending:
+                    print("DESCENDING")
+                    return false
+                case .orderedAscending:
+                    print("ASCENDING")
+                    return false
+                case .orderedSame:
+                    print("SAME")
+                    return true
+                }
+            }).first {
+                dateGroup.music.append(eachSong)
+            } else {
+                let dateGroup = MusicWithDate()
+                dateGroup.date = eachSong.dateAdded
+                dateGroup.music.append(eachSong)
+                self.dataSource.append(dateGroup)
+            }
+        }
+        
+        self.dataSource.sort(by: { $0.date.compare($1.date) == .orderedDescending })
     }
     
     
@@ -187,8 +254,31 @@ class ViewController: UIViewController {
         shareMusic()
     }
     
+    @IBAction func didTapOpenCardView(_ sender: Any) {
+        if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
+            let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
+            switch order {
+            case .orderedDescending:
+                print("DESCENDING")
+                return false
+            case .orderedAscending:
+                print("ASCENDING")
+                return false
+            case .orderedSame:
+                print("SAME")
+                return true
+            }
+        }).first {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let resultVC = main.instantiateViewController(withIdentifier: "CardViewController") as? InterestsViewController
+            resultVC?.dataSource = todaysRecord
+            self.present(resultVC!, animated: true, completion: nil)
+        }
+        
+    }
+    
     func shareMusic(){
-        var songString:String = ""
+        /*var songString:String = ""
         for element in songName.indices.dropLast() {
             songString = songName[element] + ", " + songString
         }
@@ -197,8 +287,15 @@ class ViewController: UIViewController {
         /// To add the album artwork, use the code below
         // , imageViewOutlet.image!
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true)
+        present(ac, animated: true)*/
+        
     }
     
+    
+}
+
+class MusicWithDate {
+    var date : Date = Date()
+    var music : [MPMediaItem] = []
 }
 
