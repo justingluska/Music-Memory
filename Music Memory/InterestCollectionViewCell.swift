@@ -50,14 +50,24 @@ class InterestCollectionViewCell: UICollectionViewCell
         if let image = self.dataSource.artwork?.image(at: featuredImageView.frame.size) {
             self.featuredImageView.image = image
         } else {
-            self.featuredImageView.image = UIImage.init(named: "image")
+            self.featuredImageView.image = UIImage.init(named: "unknownArtwork")
         }
 
-        var title = self.dataSource.title ?? "Unknown Name"
-        var artist = "By \(self.dataSource.artist ?? "Unknown Artist")"
-        var time = (Double(self.dataSource.playCount)/3600) * self.dataSource.playbackDuration
-        var listened = "Hours Listened: \(Double(round(100*time)/100)))"
-        var final = "\(title)\n\n\(artist)\n\n\(listened)"
+        // Song Added Properties
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: self.dataSource.dateAdded)
+        let timeLastPlayed = self.dataSource.lastPlayedDate ?? date
+        let format = DateFormatter()
+        format.dateFormat = "MM/dd/yyyy"
+        let lastPlayedFormatted = format.string(from: timeLastPlayed)
+        
+        let title = self.dataSource.title ?? "Unknown Name"
+        let artist = "By \(self.dataSource.artist ?? "Unknown Artist")"
+        let time = (Double(self.dataSource.playCount)/3600) * self.dataSource.playbackDuration
+        let listened = "Hours Listened: \(Double(round(100*time)/100))"
+        var final = "From \(year):\n\n\(title)\n\n\(artist)\n\n\(listened)\n\nLast Played on \(lastPlayedFormatted)"
         interestTitleLabel.text = final
         
     }

@@ -72,9 +72,11 @@ class ViewController: UIViewController {
     var test: UIImage!
     
     
+    @IBOutlet weak var hopButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hopButton.layer.cornerRadius = 20
         //try? VideoBackground.shared.play(view: view, videoName: "home", videoType: "mp4")
         //fetchOverview()
 //        var job = Interest(title: "lets see if this works", featuredImage: UIImage(named: "sin")!)
@@ -97,7 +99,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.groupSongs()
+        
         //Today's record
         
 //        if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
@@ -260,6 +262,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOpenCardView(_ sender: Any) {
+        self.groupSongs()
         if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
             let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
             switch order {
