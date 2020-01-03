@@ -64,24 +64,36 @@ extension Date {
 
 class ViewController: UIViewController {
 
-    
-    
     var songName = [String]()
     var songArtist: Array = [""]
     var songPlays: Array = [""]
     var dataSource : [MusicWithDate] = []
     
-    @IBOutlet weak var imageViewOutlet: UIImageView!
     var test: UIImage!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        try? VideoBackground.shared.play(view: view, videoName: "home", videoType: "mp4")
+        //try? VideoBackground.shared.play(view: view, videoName: "home", videoType: "mp4")
         //fetchOverview()
 //        var job = Interest(title: "lets see if this works", featuredImage: UIImage(named: "sin")!)
 //        job.title = "yeah"
 //        print(job.title)
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if let isFirstStart = UserDefaults.standard.value(forKey: "isFirstLaunch") as? Bool {
+            print("this is not the first launch")
+        } else {
+            print("this is the first launch")
+            UserDefaults.standard.set(false, forKey: "isFirstLaunch")
+            UserDefaults.standard.synchronize()
+
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc : FirstTimeViewController = mainStoryboard.instantiateViewController(withIdentifier: "FirstTimeViewController") as! FirstTimeViewController
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

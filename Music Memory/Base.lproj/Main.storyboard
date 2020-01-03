@@ -8,6 +8,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--FirstTimeViewController-->
+        <scene sceneID="qKl-Pi-ecZ">
+            <objects>
+                <viewController storyboardIdentifier="sbBlue" title="FirstTimeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKR-gr-OEp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="sbBlue" id="Kdn-9A-l5j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="b6a-BR-MQv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3on-jo-CU5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tci-DD-xn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-926" y="-164"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="5DS-J5-b54">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="fia-2F-RQA" customClass="PageViewController" customModule="musicHop" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="iKR-gr-OEp" kind="show" id="wIs-s6-YJy"/>
+                        <segue destination="vZa-Q0-dhX" kind="show" id="bfu-nT-Maa"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gWb-Lz-f04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2079" y="301"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lzI-uW-azG">
+            <objects>
+                <viewController storyboardIdentifier="sbRed" id="vZa-Q0-dhX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="sbRed" id="FpQ-Lz-KPG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gnK-Mi-6oZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sDm-mE-BkJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVv-gk-aD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1015" y="554"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,15 +61,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="hey :p" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fI6-2n-jp7">
-                                <rect key="frame" x="10" y="79" width="384" height="783"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="B1V-zw-pUu">
+                                <rect key="frame" x="-4" y="-40" width="383" height="747"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="musicHop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIY-U1-Dfi">
-                                <rect key="frame" x="20" y="60" width="78" height="21"/>
+                                <rect key="frame" x="148" y="108" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,6 +79,7 @@
                                 <state key="normal" title="open card view"/>
                                 <connections>
                                     <action selector="didTapOpenCardView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="irz-WK-mbb"/>
+                                    <segue destination="BLt-vt-bGR" kind="showDetail" id="YBW-f4-RbZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,16 +87,17 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Chf-wd-JBv" secondAttribute="trailing" constant="100" id="4bM-Qt-aEd"/>
                             <constraint firstItem="Chf-wd-JBv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Ala-dv-XqR"/>
+                            <constraint firstItem="B1V-zw-pUu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="efL-eY-tLS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Chf-wd-JBv" secondAttribute="trailing" constant="100" id="fI7-5r-Omw"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="B1V-zw-pUu" secondAttribute="bottom" constant="-40" id="iTk-cK-xth"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B1V-zw-pUu" secondAttribute="trailing" constant="-20" id="m29-lc-3Dl"/>
+                            <constraint firstItem="B1V-zw-pUu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-40" id="tC2-lo-OQb"/>
                             <constraint firstItem="Chf-wd-JBv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="vHA-mn-0y4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Chf-wd-JBv" secondAttribute="bottom" constant="50" id="xAY-vi-hgr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Chf-wd-JBv" secondAttribute="bottom" constant="50" id="zj0-2W-TZA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="fI6-2n-jp7" id="I7r-ed-PPB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,7 +108,7 @@
             <objects>
                 <viewController storyboardIdentifier="CardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BLt-vt-bGR" customClass="InterestsViewController" customModule="musicHop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9bs-fM-6tM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SE8-vs-TOp" userLabel="Line View">
@@ -75,7 +118,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="InterestsViewController" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H2K-xJ-B1J">
-                                <rect key="frame" x="5" y="121" width="365" height="425"/>
+                                <rect key="frame" x="5" y="121" width="365" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="20" id="cP7-xB-BlX">
                                     <size key="itemSize" width="382" height="388"/>
@@ -85,7 +128,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterestCollectionViewCell" id="PrH-63-kw7" customClass="InterestCollectionViewCell" customModule="musicHop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="18.5" width="382" height="388"/>
+                                        <rect key="frame" x="0.0" y="8.5" width="382" height="388"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kji-We-u54">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="388"/>
@@ -95,7 +138,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="388"/>
                                                     <color key="backgroundColor" red="0.21284052096408934" green="0.33000001311302185" blue="0.23202144384237261" alpha="0.18894477739726026" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-NB-dWa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-NB-dWa">
                                                     <rect key="frame" x="0.0" y="3" width="382" height="382"/>
                                                     <color key="backgroundColor" red="0.010905774111675148" green="0.010905774111675148" blue="0.010905774111675148" alpha="0.56718214897260277" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -135,7 +178,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqx-eJ-W8i">
-                                <rect key="frame" x="98" y="546" width="189" height="37"/>
+                                <rect key="frame" x="98" y="526" width="189" height="37"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
                                 <state key="normal" title="Share Todays Music...">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -171,5 +214,6 @@
     </scenes>
     <resources>
         <image name="image.png" width="1898" height="1898"/>
+        <image name="splash.png" width="1920" height="1076"/>
     </resources>
 </document>
