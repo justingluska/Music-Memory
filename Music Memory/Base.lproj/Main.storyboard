@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fia-2F-RQA">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -15,14 +15,14 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="sbBlue" id="Kdn-9A-l5j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="b6a-BR-MQv"/>
                     </view>
                     <navigationItem key="navigationItem" id="3on-jo-CU5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tci-DD-xn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-926" y="-164"/>
+            <point key="canvasLocation" x="-1337" y="-455"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="5DS-J5-b54">
@@ -31,6 +31,7 @@
                     <connections>
                         <segue destination="iKR-gr-OEp" kind="show" id="wIs-s6-YJy"/>
                         <segue destination="vZa-Q0-dhX" kind="show" id="bfu-nT-Maa"/>
+                        <segue destination="BHI-sZ-NRo" kind="show" id="Chj-8r-acp"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWb-Lz-f04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -44,7 +45,7 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="sbRed" id="FpQ-Lz-KPG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="gnK-Mi-6oZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="sDm-mE-BkJ"/>
@@ -54,9 +55,46 @@
             <point key="canvasLocation" x="-1015" y="554"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="OYA-pY-L4f">
+            <objects>
+                <viewController storyboardIdentifier="sbFinal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BHI-sZ-NRo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Neg-Cs-yo1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="it's nostalgia time!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8on-VY-Ttf">
+                                <rect key="frame" x="53" y="139" width="268" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZE4-Ej-bpQ">
+                                <rect key="frame" x="83" y="269" width="213" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <state key="normal" title="let's hear it">
+                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="2io-tr-u3c" eventType="touchUpInside" id="MRw-Wd-4eZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="leC-h9-HmX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dWY-BB-Emh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwB-Sp-ALa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2io-tr-u3c" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1710" y="1151"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="musicHop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="musicHop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,6 +145,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="839-0t-qqr"/>
                     <connections>
                         <outlet property="hopButton" destination="Chf-wd-JBv" id="3u3-bf-nCR"/>
                     </connections>

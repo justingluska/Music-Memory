@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     var test: UIImage!
     
     
+    
     @IBOutlet weak var hopButton: UIButton!
     
     override func viewDidLoad() {
@@ -55,9 +56,6 @@ class ViewController: UIViewController {
         hopButton.layer.cornerRadius = 20
         //try? VideoBackground.shared.play(view: view, videoName: "home", videoType: "mp4")
         //fetchOverview()
-//        var job = Interest(title: "lets see if this works", featuredImage: UIImage(named: "sin")!)
-//        job.title = "yeah"
-//        print(job.title)
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -72,6 +70,12 @@ class ViewController: UIViewController {
             let vc : FirstTimeViewController = mainStoryboard.instantiateViewController(withIdentifier: "FirstTimeViewController") as! FirstTimeViewController
             self.present(vc, animated: true, completion: nil)
         }
+        UserDefaults.standard.set(false, forKey: "isFirstLaunch")
+        UserDefaults.standard.synchronize()
+
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc : FirstTimeViewController = mainStoryboard.instantiateViewController(withIdentifier: "FirstTimeViewController") as! FirstTimeViewController
+        self.present(vc, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
