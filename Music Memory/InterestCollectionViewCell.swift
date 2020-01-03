@@ -53,10 +53,13 @@ class InterestCollectionViewCell: UICollectionViewCell
             self.featuredImageView.image = UIImage.init(named: "image")
         }
         //featuredImageView.image = self.dataSource.artwork?.image(at: featuredImageView.frame.size)
+        var listened = Double(self.dataSource.playbackDuration)
+        listened = listened / 3600
+        listened = Double(round(100*listened)/100)
         interestTitleLabel.text = self.dataSource.title ?? ""
+        interestTitleLabel.text = "\(interestTitleLabel.text!) \n\n By:  \(self.dataSource.albumArtist!)\n\nHours Listened: \(listened)"
         
-        //featuredImageView.layer.cornerRadius = 30.0
-        //featuredImageView.clipsToBounds = true
+        
     }
     
 }

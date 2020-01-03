@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        try? VideoBackground.shared.play(view: view, videoName: "newstart", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "home", videoType: "mp4")
         //fetchOverview()
 //        var job = Interest(title: "lets see if this works", featuredImage: UIImage(named: "sin")!)
 //        job.title = "yeah"
@@ -88,41 +88,36 @@ class ViewController: UIViewController {
         self.groupSongs()
         //Today's record
         
-        if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
-            let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
-            switch order {
-            case .orderedDescending:
-                //print("DESCENDING")
-                return false
-            case .orderedAscending:
-                //print("ASCENDING")
-                return false
-            case .orderedSame:
-                //print("SAME")
-                return true
-            }
-        }).first {
-            //Show the name
-            var timeListened = Double(todaysRecord.music.first?.playbackDuration ?? 0)
-            timeListened = (timeListened / 60) * Double(todaysRecord.music.first?.playCount ?? 0)
-            timeListened = Double(round(100*timeListened)/100) / 60
-            let newTime = String(format: "%.1f", timeListened)
-            textDisplay.text = "\(todaysRecord.music.first?.title ?? "")\nby \(todaysRecord.music.first?.artist ?? "")\n\(todaysRecord.music.first?.albumTitle ?? "")\n\(todaysRecord.music.first?.playCount ?? 0) Plays\nHours Listened: \(newTime)"
-            if let image = todaysRecord.music.first?.artwork?.image(at: imageViewOutlet.frame.size) {
-                self.imageViewOutlet.image = image
-            } else {
-                self.imageViewOutlet.image = UIImage.init(named: "image")
-            }
-        }
+//        if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
+//            let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
+//            switch order {
+//            case .orderedDescending:
+//                //print("DESCENDING")
+//                return false
+//            case .orderedAscending:
+//                //print("ASCENDING")
+//                return false
+//            case .orderedSame:
+//                //print("SAME")
+//                return true
+//            }
+//        }).first {
+//            //Show the name
+//            var timeListened = Double(todaysRecord.music.first?.playbackDuration ?? 0)
+//            timeListened = (timeListened / 60) * Double(todaysRecord.music.first?.playCount ?? 0)
+//            timeListened = Double(round(100*timeListened)/100) / 60
+//            let newTime = String(format: "%.1f", timeListened)
+//            textDisplay.text = "\(todaysRecord.music.first?.title ?? "")\nby \(todaysRecord.music.first?.artist ?? "")\n\(todaysRecord.music.first?.albumTitle ?? "")\n\(todaysRecord.music.first?.playCount ?? 0) Plays\nHours Listened: \(newTime)"
+//            if let image = todaysRecord.music.first?.artwork?.image(at: imageViewOutlet.frame.size) {
+//                self.imageViewOutlet.image = image
+//            } else {
+//                self.imageViewOutlet.image = UIImage.init(named: "image")
+//            }
+//        }
     }
     
     @IBOutlet weak var textDisplay: UITextView!
     
-    @IBOutlet weak var buttonOutlet: UIButton!
-    
-    @IBAction func buttonTest(_ sender: Any) {
-        
-    }
     
     @IBOutlet weak var label: UITextView!
     
@@ -220,20 +215,19 @@ class ViewController: UIViewController {
         guard let songs = MPMediaQuery.songs().items else {
             return
         }
-        
         for eachSong in songs {
-            print("Date: \(eachSong.dateAdded), Title: \(eachSong.title)")
+            //print("Date: \(eachSong.dateAdded), Title: \(eachSong.title)")
             if let dateGroup = self.dataSource.filter({ (dateGroup) -> Bool in
                 let order = Calendar.current.compare(eachSong.dateAdded, to: dateGroup.date, toGranularity: .day)
                 switch order {
                 case .orderedDescending:
-                    print("DESCENDING")
+                    //print("DESCENDING")
                     return false
                 case .orderedAscending:
-                    print("ASCENDING")
+                    //print("ASCENDING")
                     return false
                 case .orderedSame:
-                    print("SAME")
+                    //print("SAME")
                     return true
                 }
             }).first {
@@ -245,7 +239,6 @@ class ViewController: UIViewController {
                 self.dataSource.append(dateGroup)
             }
         }
-        
         self.dataSource.sort(by: { $0.date.compare($1.date) == .orderedDescending })
     }
     
@@ -259,13 +252,13 @@ class ViewController: UIViewController {
             let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
             switch order {
             case .orderedDescending:
-                print("DESCENDING")
+                //print("DESCENDING")
                 return false
             case .orderedAscending:
-                print("ASCENDING")
+                //print("ASCENDING")
                 return false
             case .orderedSame:
-                print("SAME")
+                //print("SAME")
                 return true
             }
         }).first {
