@@ -8,5 +8,6 @@ target 'Music Memory' do
   # Pods for Music Memory
 
 pod 'SwiftVideoBackground'
+pod 'Google-Mobile-Ads-SDK'
 
 end

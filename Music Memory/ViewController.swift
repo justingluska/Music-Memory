@@ -11,34 +11,7 @@ import MediaPlayer
 import StoreKit
 import Foundation
 import SwiftVideoBackground
-
-class songStats{
-    var title = ""
-    var artist = ""
-    var album = ""
-    var plays = 0
-    var hours = ""
-    var artwork: UIImage
-    
-    init(title: String, artist: String, album: String, plays: Int, hours: String, artwork: UIImage){
-        self.title = title
-        self.artist = artist
-        self.album = album
-        self.plays = plays
-        self.hours = hours
-        self.artwork = artwork
-    }
-    
-    func displayStats(){
-        print(self.title)
-        print(self.artist)
-        print(self.album)
-        print(self.plays)
-        print(self.hours)
-        print(type(of: self.artwork))
-    }
-}
-
+import GoogleMobileAds
 
 struct OverviewData {
     var totalPlays: Int
@@ -68,7 +41,7 @@ class ViewController: UIViewController {
     var songArtist: Array = [""]
     var songPlays: Array = [""]
     var dataSource : [MusicWithDate] = []
-    
+    var interstitial: GADInterstitial!
     var test: UIImage!
     
     
@@ -76,6 +49,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-9134328104554845/9661741527")
+        let request = GADRequest()
+        interstitial.load(request)
         hopButton.layer.cornerRadius = 20
         //try? VideoBackground.shared.play(view: view, videoName: "home", videoType: "mp4")
         //fetchOverview()
@@ -226,9 +202,11 @@ class ViewController: UIViewController {
     }*/
     
     func groupSongs() {
+        ///
         guard let songs = MPMediaQuery.songs().items else {
             return
         }
+        /// ^ Above will be displayed at the page view controller
         for eachSong in songs {
             //print("Date: \(eachSong.dateAdded), Title: \(eachSong.title)")
             if let dateGroup = self.dataSource.filter({ (dateGroup) -> Bool in
@@ -256,12 +234,17 @@ class ViewController: UIViewController {
         self.dataSource.sort(by: { $0.date.compare($1.date) == .orderedDescending })
     }
     
-    
     @IBAction func artistClicked(_ sender: Any) {
         shareMusic()
     }
     
     @IBAction func didTapOpenCardView(_ sender: Any) {
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+        }
+        else{
+            print("not ready")
+        }
         self.groupSongs()
         if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
             let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)

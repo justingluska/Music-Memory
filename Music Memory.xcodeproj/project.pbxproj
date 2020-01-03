@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		81D8F86B5226BA3F7917DB8F /* Pods_Music_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBADCBE2DF6B5301391BA34C /* Pods_Music_Memory.framework */; };
 		D096B11323BEF1E800C857E6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D096B11223BEF1E800C857E6 /* splash.png */; };
-		D096B11523BEF40300C857E6 /* FirstTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096B11423BEF40300C857E6 /* FirstTimeViewController.swift */; };
 		D096B11723BEF6F900C857E6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096B11623BEF6F900C857E6 /* PageViewController.swift */; };
 		D09A660623BEB607002CFBC7 /* home.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D09A660423BEB607002CFBC7 /* home.mp4 */; };
 		D09A660723BEB607002CFBC7 /* view.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D09A660523BEB607002CFBC7 /* view.mp4 */; };
@@ -36,7 +35,6 @@
 		BBADCBE2DF6B5301391BA34C /* Pods_Music_Memory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_Memory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0770F0723B40FD800A6D78E /* start.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = start.mp4; sourceTree = SOURCE_ROOT; };
 		D096B11223BEF1E800C857E6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = SOURCE_ROOT; };
-		D096B11423BEF40300C857E6 /* FirstTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeViewController.swift; sourceTree = "<group>"; };
 		D096B11623BEF6F900C857E6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		D09A660423BEB607002CFBC7 /* home.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = home.mp4; sourceTree = SOURCE_ROOT; };
 		D09A660523BEB607002CFBC7 /* view.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = view.mp4; sourceTree = SOURCE_ROOT; };
@@ -132,7 +130,6 @@
 				D09A660423BEB607002CFBC7 /* home.mp4 */,
 				D0A115DB23BEC27800B908E4 /* vid2.mp4 */,
 				D09A660523BEB607002CFBC7 /* view.mp4 */,
-				D096B11423BEF40300C857E6 /* FirstTimeViewController.swift */,
 				D0C6194C23BF002800B22506 /* unknownArtwork.png */,
 			);
 			path = "Music Memory";
@@ -269,7 +266,6 @@
 				D0F5A4D423B0886400EEC6D8 /* Music_Memory.xcdatamodeld in Sources */,
 				D0B2089123B45D8800E361C4 /* Interest.swift in Sources */,
 				D096B11723BEF6F900C857E6 /* PageViewController.swift in Sources */,
-				D096B11523BEF40300C857E6 /* FirstTimeViewController.swift in Sources */,
 				D0F5A4CC23B0886400EEC6D8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
