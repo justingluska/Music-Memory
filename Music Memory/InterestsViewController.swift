@@ -8,9 +8,44 @@
 
 import UIKit
 import SwiftVideoBackground
+import MediaPlayer
 
 class InterestsViewController: UIViewController
 {
+    
+    @IBAction func shareSongs(_ sender: Any) {
+        guard let songs = MPMediaQuery.songs().items
+                   else {
+                   return
+               }
+        var songString:String = ""
+        var songName = [String]()
+                for song in songs {
+                let today = Date()
+                    let then = song.dateAdded
+                    let calendar = Calendar.current
+                    let day = calendar.component(.day, from: then)
+                    let month = calendar.component(.month, from:then)
+                    
+                    if (month == calendar.component(.month, from: today)){
+                        if (day == calendar.component(.day, from: today)){
+                            songName.append(song.title!)
+                            }
+                        }
+                }
+       
+        for element in songName.indices.dropLast() {
+            songString = songName[element] + ", " + songString
+        }
+        songString = songString + "and " + songName[(songName.count-1)]
+        let items: [Any] = ["I discovered the music \(songString) on this day of the year. See your throwback songs by downloading musicHop! ", URL(string: "https://www.justingluska.com")!]
+        /// To add the album artwork, use the code below
+        // , imageViewOutlet.image!
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+    }
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var contentView: UIView!
@@ -20,7 +55,6 @@ class InterestsViewController: UIViewController
     @IBOutlet weak var songsFromTodayLabel: UILabel!
     
     var dataSource : MusicWithDate = MusicWithDate()
-
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -43,6 +77,8 @@ class InterestsViewController: UIViewController
         //collectionView.delegate = self
         collectionView.reloadData()
     }
+    
+    
 }
 
 extension InterestsViewController: UICollectionViewDataSource

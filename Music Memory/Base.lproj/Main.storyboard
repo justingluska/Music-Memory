@@ -239,6 +239,9 @@
                                 <state key="normal" title="Share Todays Music...">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareSongs:" destination="BLt-vt-bGR" eventType="touchUpInside" id="FF6-Ej-sge"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
