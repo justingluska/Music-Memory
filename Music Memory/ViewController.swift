@@ -70,35 +70,6 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        //Today's record
-        
-//        if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
-//            let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
-//            switch order {
-//            case .orderedDescending:
-//                //print("DESCENDING")
-//                return false
-//            case .orderedAscending:
-//                //print("ASCENDING")
-//                return false
-//            case .orderedSame:
-//                //print("SAME")
-//                return true
-//            }
-//        }).first {
-//            //Show the name
-//            var timeListened = Double(todaysRecord.music.first?.playbackDuration ?? 0)
-//            timeListened = (timeListened / 60) * Double(todaysRecord.music.first?.playCount ?? 0)
-//            timeListened = Double(round(100*timeListened)/100) / 60
-//            let newTime = String(format: "%.1f", timeListened)
-//            textDisplay.text = "\(todaysRecord.music.first?.title ?? "")\nby \(todaysRecord.music.first?.artist ?? "")\n\(todaysRecord.music.first?.albumTitle ?? "")\n\(todaysRecord.music.first?.playCount ?? 0) Plays\nHours Listened: \(newTime)"
-//            if let image = todaysRecord.music.first?.artwork?.image(at: imageViewOutlet.frame.size) {
-//                self.imageViewOutlet.image = image
-//            } else {
-//                self.imageViewOutlet.image = UIImage.init(named: "image")
-//            }
-//        }
     }
     
     @IBOutlet weak var textDisplay: UITextView!
