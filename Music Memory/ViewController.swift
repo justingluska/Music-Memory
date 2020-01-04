@@ -142,10 +142,6 @@ class ViewController: UIViewController {
         self.dataSource.sort(by: { $0.date.compare($1.date) == .orderedDescending })
     }
     
-    @IBAction func artistClicked(_ sender: Any) {
-        shareMusic()
-    }
-    
     @IBAction func didTapOpenCardView(_ sender: Any) {
         if interstitial.isReady {
           interstitial.present(fromRootViewController: self)
