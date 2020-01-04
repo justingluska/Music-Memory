@@ -67,15 +67,9 @@ class ViewController: UIViewController {
             UserDefaults.standard.synchronize()
 
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let vc : FirstTimeViewController = mainStoryboard.instantiateViewController(withIdentifier: "FirstTimeViewController") as! FirstTimeViewController
+            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "PageViewController") as! UIViewController
             self.present(vc, animated: true, completion: nil)
         }
-        UserDefaults.standard.set(false, forKey: "isFirstLaunch")
-        UserDefaults.standard.synchronize()
-
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc : FirstTimeViewController = mainStoryboard.instantiateViewController(withIdentifier: "FirstTimeViewController") as! FirstTimeViewController
-        self.present(vc, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -207,7 +201,8 @@ class ViewController: UIViewController {
     
     func groupSongs() {
         ///
-        guard let songs = MPMediaQuery.songs().items else {
+        guard let songs = MPMediaQuery.songs().items
+            else {
             return
         }
         /// ^ Above will be displayed at the page view controller
