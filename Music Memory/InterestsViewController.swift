@@ -12,15 +12,16 @@ import MediaPlayer
 
 class InterestsViewController: UIViewController
 {
-    
+    var songName = [String]()
     @IBAction func shareSongs(_ sender: Any) {
         guard let songs = MPMediaQuery.songs().items
                    else {
                    return
                }
         var songString:String = ""
-        var songName = [String]()
+        
                 for song in songs {
+                    
                 let today = Date()
                     let then = song.dateAdded
                     let calendar = Calendar.current
@@ -46,10 +47,16 @@ class InterestsViewController: UIViewController
     }
     
     
+    @IBAction func playCurrentSong(_ sender: Any) {
+        print("hey")
+    }
+    
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var contentView: UIView!
-    var interests = Interest.fetchInterests()
+    //var interests = Interest.fetchInterests()
     let cellScale: CGFloat = 0.6
     
     @IBOutlet weak var songsFromTodayLabel: UILabel!

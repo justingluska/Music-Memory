@@ -69,6 +69,42 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func addToList(_ sender: Any) {
+        guard let songs = MPMediaQuery.songs().items
+                   else {
+                   return
+               }
+        let dateGroup = MusicWithDate()
+        var songString:String = ""
+        var songName = [String]()
+                for song in songs {
+                let today = Date()
+                    let then = song.dateAdded
+                    let calendar = Calendar.current
+                    let day = calendar.component(.day, from: then)
+                    let month = calendar.component(.month, from:then)
+                    
+                    if (month == calendar.component(.month, from: today)){
+                        if (day == calendar.component(.day, from: today)){
+                            songName.append(song.title!)
+                            
+                            dateGroup.date = song.dateAdded
+                            dateGroup.music.append(song)
+                            dataSource.append(dateGroup)
+                            print(dateGroup)
+                            }
+                        }
+                }
+        print(songName)
+        /// self.groupSongs() adds duplicates, do not use.
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let resultVC = main.instantiateViewController(withIdentifier: "CardViewController") as? InterestsViewController
+        resultVC?.dataSource = dateGroup
+        self.present(resultVC!, animated: true, completion: nil)
+        interstitial.present(fromRootViewController: self)
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
     }
     
@@ -85,6 +121,8 @@ class ViewController: UIViewController {
             else {
             return
         }
+
+        
         /// ^ Above will be displayed at the page view controller
         for eachSong in songs {
             //print("Date: \(eachSong.dateAdded), Title: \(eachSong.title)")
@@ -114,12 +152,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOpenCardView(_ sender: Any) {
-        if interstitial.isReady {
-          interstitial.present(fromRootViewController: self)
-        }
-        else{
-            print("not ready")
-        }
         self.groupSongs()
         if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
             let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
@@ -140,7 +172,7 @@ class ViewController: UIViewController {
             resultVC?.dataSource = todaysRecord
             self.present(resultVC!, animated: true, completion: nil)
         }
-        
+      interstitial.present(fromRootViewController: self)
     }
     
     

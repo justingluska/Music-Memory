@@ -125,6 +125,22 @@
                                     <segue destination="BLt-vt-bGR" kind="showDetail" id="YBW-f4-RbZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulb-ex-Qub">
+                                <rect key="frame" x="164" y="483" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addToList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D2Z-yu-85e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qob-SG-t21">
+                                <rect key="frame" x="164" y="521" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BLt-vt-bGR" kind="show" id="kLA-IK-szz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -190,7 +206,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="388"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-tk-I5l">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unknownArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-tk-I5l">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="388"/>
                                                     <color key="backgroundColor" red="0.21284052096408934" green="0.33000001311302185" blue="0.23202144384237261" alpha="0.18894477739726026" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
@@ -205,6 +221,17 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVJ-tX-8Ei">
+                                                    <rect key="frame" x="75" y="19" width="233" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                    <state key="normal" title="PLAY">
+                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="playSong:" destination="PrH-63-kw7" eventType="touchUpInside" id="ONy-Qb-qvP"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -223,6 +250,7 @@
                                         <connections>
                                             <outlet property="featuredImageView" destination="DAZ-tk-I5l" id="d1x-Ra-5Lu"/>
                                             <outlet property="interestTitleLabel" destination="hUV-NB-dWa" id="Eq7-Ug-z5I"/>
+                                            <outlet property="playSongOutlet" destination="jVJ-tX-8Ei" id="vn4-zp-1kf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -276,7 +304,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image.png" width="1898" height="1898"/>
         <image name="splash.png" width="1920" height="1076"/>
+        <image name="unknownArtwork.png" width="500" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kLA-IK-szz"/>
+    </inferredMetricsTieBreakers>
 </document>

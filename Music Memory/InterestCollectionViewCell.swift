@@ -15,12 +15,22 @@ class InterestCollectionViewCell: UICollectionViewCell
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var interestTitleLabel: UILabel!
     
-    
-    var interest: Interest! {
-        didSet {
-            self.updateUI()
-        }
+    @IBOutlet weak var playSongOutlet: UIButton!
+    @IBAction func playSong(_ sender: Any) {
+        var temp:[String] = []
+        temp.append(dataSource.playbackStoreID)
+        let musicPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
+        // Add a playback queue containing all songs on the device.
+        musicPlayer.setQueue(with: temp)
+        // Start playing from the beginning of the queue.
+        musicPlayer.play()
     }
+    
+//    var interest: Interest! {
+//        didSet {
+//            self.updateUI()
+//        }
+//    }
     
     var dataSource: MPMediaItem! {
         didSet {
@@ -52,7 +62,7 @@ class InterestCollectionViewCell: UICollectionViewCell
         } else {
             self.featuredImageView.image = UIImage.init(named: "unknownArtwork")
         }
-
+        
         // Song Added Properties
         
         let date = Date()
@@ -67,7 +77,8 @@ class InterestCollectionViewCell: UICollectionViewCell
         let artist = "By \(self.dataSource.artist ?? "Unknown Artist")"
         let time = (Double(self.dataSource.playCount)/3600) * self.dataSource.playbackDuration
         let listened = "Hours Listened: \(Double(round(100*time)/100))"
-        var final = "From \(year):\n\n\(title)\n\n\(artist)\n\n\(listened)\n\nLast Played on \(lastPlayedFormatted)"
+        let plays = self.dataSource.playCount
+        var final = "From \(year):\n\n\(title)\n\n\(artist)\n\n\(plays) Plays\n\nLast Played on \(lastPlayedFormatted)"
         interestTitleLabel.text = final
         
     }
