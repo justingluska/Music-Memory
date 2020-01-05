@@ -12,6 +12,10 @@ import MediaPlayer
 
 class InterestsViewController: UIViewController
 {
+    
+    @IBOutlet weak var shareOutlet: UIButton!
+    @IBOutlet weak var backOutlet: UIButton!
+    
     var songName = [String]()
     @IBAction func shareSongs(_ sender: Any) {
         guard let songs = MPMediaQuery.songs().items
@@ -39,7 +43,8 @@ class InterestsViewController: UIViewController
             songString = songName[element] + ", " + songString
         }
         songString = songString + "and " + songName[(songName.count-1)]
-        let items: [Any] = ["I discovered the music \(songString) on this day of the year. See your throwback songs by downloading musicHop! ", URL(string: "https://www.justingluska.com")!]
+        let items: [Any] = ["I discovered the music \(songString) on this day of the year. See your throwback songs by downloading musicHop on the App Store!"]
+        // , URL(string: "https://www.justingluska.com")!
         /// To add the album artwork, use the code below
         // , imageViewOutlet.image!
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
@@ -47,41 +52,32 @@ class InterestsViewController: UIViewController
     }
     
     
-    @IBAction func playCurrentSong(_ sender: Any) {
-        print("hey")
+
+    @IBAction func goBackButton(_ sender: UIButton) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let resultVC = main.instantiateViewController(withIdentifier: "main") as? ViewController
+        resultVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(resultVC!, animated: true, completion: nil)
     }
     
-    
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBOutlet weak var contentView: UIView!
+
     //var interests = Interest.fetchInterests()
     let cellScale: CGFloat = 0.6
     
     @IBOutlet weak var songsFromTodayLabel: UILabel!
     
+    @IBOutlet weak var imageCollect: UIImageView!
     var dataSource : MusicWithDate = MusicWithDate()
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        try? VideoBackground.shared.play(view: view, videoName: "stats", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "blue", videoType: "mp4")
         collectionView.dataSource = self
-        collectionView.layer.cornerRadius = 25
         let today = Date()
         let cal = Calendar.current
-        //let day = cal.ordinality(of: .day, in: .year, for: today)
-        songsFromTodayLabel.text = "SONGS ADDED TODAY"
-//        let screenSize = UIScreen.main.bounds.size
-//        let cellWidth = floor(screenSize.width * cellScale)
-//        let cellHeight = floor(screenSize.height * cellScale)
-//        let insetX = (view.bounds.width - cellWidth) / 2.0
-//        let insetY = (view.bounds.width - cellHeight) / 2.0
-//        
-//        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-//        collectionView.contentInset = UIEdgeInsets(top: insetY, left:insetX, bottom:insetY, right:insetX)
-        //collectionView.delegate = self
+        shareOutlet.layer.cornerRadius = 12
+        backOutlet.layer.cornerRadius = 12
         collectionView.reloadData()
     }
     

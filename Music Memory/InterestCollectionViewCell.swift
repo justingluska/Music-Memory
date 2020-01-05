@@ -12,8 +12,8 @@ import MediaPlayer
 class InterestCollectionViewCell: UICollectionViewCell
 {
     @IBOutlet weak var featuredImageView: UIImageView!
-    @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var interestTitleLabel: UILabel!
+    @IBOutlet weak var test: UIImageView!
     
     @IBOutlet weak var playSongOutlet: UIButton!
     @IBAction func playSong(_ sender: Any) {
@@ -24,37 +24,18 @@ class InterestCollectionViewCell: UICollectionViewCell
         musicPlayer.play()
     }
     
-//    var interest: Interest! {
-//        didSet {
-//            self.updateUI()
-//        }
-//    }
-    
     var dataSource: MPMediaItem! {
         didSet {
             self.updateUI()
         }
     }
     
-    /*func updateUI(){
-        
-        if let interest = interest {
-            featuredImageView.image = interest.featuredImage
-            interestTitleLabel.text = interest.title
-        }
-        else {
-            featuredImageView.image = nil
-            interestTitleLabel.text = nil
-            backgroundColorView.backgroundColor = nil
-        }
-        backgroundColorView.layer.cornerRadius = 30.0
-        backgroundColorView.clipsToBounds = true
-        featuredImageView.layer.cornerRadius = 30.0
-        featuredImageView.clipsToBounds = true
-    }*/
-    
     func updateUI(){
         
+        featuredImageView.layer.cornerRadius = 15
+        test.layer.cornerRadius = 15
+        featuredImageView.backgroundColor = UIColor.white
+        featuredImageView.clipsToBounds = true
         if let image = self.dataSource.artwork?.image(at: featuredImageView.frame.size) {
             self.featuredImageView.image = image
         } else {
@@ -78,10 +59,10 @@ class InterestCollectionViewCell: UICollectionViewCell
         
         let title = self.dataSource.title ?? "Unknown Name"
         let artist = "By \(self.dataSource.artist ?? "Unknown Artist")"
-        let time = (Double(self.dataSource.playCount)/3600) * self.dataSource.playbackDuration
-        let listened = "Hours Listened: \(Double(round(100*time)/100))"
+        let time = (Double(self.dataSource.playCount)/60) * self.dataSource.playbackDuration
+        let listened = "Minutes Listened: \(Double(round(100*time)/100))"
         let plays = self.dataSource.playCount
-        var final = "From \(year):\n\n\(title)\n\n\(artist)\n\n\(plays) Plays\n\nLast Played on \(lastPlayedFormatted)"
+        var final = "From \(year):\n\n\(title)\n\n\(artist)\n\n\(plays) Plays\n\nLast Played on \(lastPlayedFormatted)\n\n\(listened)"
         interestTitleLabel.text = final
         
     }

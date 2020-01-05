@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     var interstitial: GADInterstitial!
     var test: UIImage!
     
+    @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var hopButton: UIButton!
     
     override func viewDidLoad() {
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
         let request = GADRequest()
         interstitial.load(request)
         hopButton.layer.cornerRadius = 20
+        helpButton.layer.cornerRadius = 20
         
     }
     override func viewDidAppear(_ animated: Bool) {
