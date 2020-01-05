@@ -48,34 +48,6 @@ class Interest {
     var totalExplicit: Int = 0
     var totalSkips: Int = 0
     
-    func fetchOverview() -> OverviewData? {
-    guard let songs = MPMediaQuery.songs().items else {
-        return nil
-    }
-        return OverviewData(
-            totalPlays: totalPlays
-        )
-
-        for todaySong in songs{
-            let today = Date()
-            let cal = Calendar.current
-            let then = todaySong.dateAdded
-            let calendar = Calendar.current
-
-            let hour = calendar.component(.hour, from: then)
-            let day = calendar.component(.day, from: then)
-            let year = calendar.component(.year, from: then)
-            let month = calendar.component(.month, from:then)
-            
-            if (month == calendar.component(.month, from: today)){
-                //onThisDay = onThisDay + "\n\(song.title!) in DEC \(day) -> \(year)"
-                if (day == calendar.component(.day, from: today)){
-                    
-                }
-            }
-        }
-        
-    }
     
     
 }

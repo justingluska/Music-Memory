@@ -17,13 +17,11 @@
 		D09A660623BEB607002CFBC7 /* home.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D09A660423BEB607002CFBC7 /* home.mp4 */; };
 		D09A660723BEB607002CFBC7 /* view.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D09A660523BEB607002CFBC7 /* view.mp4 */; };
 		D0B2088F23B45B5100E361C4 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */; };
-		D0B2089123B45D8800E361C4 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B2089023B45D8800E361C4 /* Interest.swift */; };
 		D0B2089323B4619300E361C4 /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B2089223B4619300E361C4 /* InterestsViewController.swift */; };
 		D0C6194D23BF002800B22506 /* unknownArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C6194C23BF002800B22506 /* unknownArtwork.png */; };
 		D0C7D40023C01217003F8B40 /* sbMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C7D3FF23C01217003F8B40 /* sbMainViewController.swift */; };
 		D0E517CB23B6CB6E00B62385 /* newstart.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D0E517CA23B6CB5100B62385 /* newstart.mp4 */; };
 		D0E7A84E23B6D39200F662C2 /* stats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D0E7A84D23B6D39200F662C2 /* stats.mp4 */; };
-		D0E7A85423B706B500F662C2 /* statsNew.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D0E7A85323B706B500F662C2 /* statsNew.mp4 */; };
 		D0F5A4CA23B0886400EEC6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5A4C923B0886400EEC6D8 /* AppDelegate.swift */; };
 		D0F5A4CC23B0886400EEC6D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5A4CB23B0886400EEC6D8 /* SceneDelegate.swift */; };
 		D0F5A4CE23B0886400EEC6D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5A4CD23B0886400EEC6D8 /* ViewController.swift */; };
@@ -46,7 +44,6 @@
 		D09A660423BEB607002CFBC7 /* home.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = home.mp4; sourceTree = SOURCE_ROOT; };
 		D09A660523BEB607002CFBC7 /* view.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = view.mp4; sourceTree = SOURCE_ROOT; };
 		D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
-		D0B2089023B45D8800E361C4 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		D0B2089223B4619300E361C4 /* InterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
 		D0C6194C23BF002800B22506 /* unknownArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknownArtwork.png; sourceTree = SOURCE_ROOT; };
 		D0C7D3FF23C01217003F8B40 /* sbMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sbMainViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +116,6 @@
 				D0F5A4C923B0886400EEC6D8 /* AppDelegate.swift */,
 				D0F5A4CB23B0886400EEC6D8 /* SceneDelegate.swift */,
 				D0F5A4CD23B0886400EEC6D8 /* ViewController.swift */,
-				D0B2089023B45D8800E361C4 /* Interest.swift */,
 				D096B11623BEF6F900C857E6 /* PageViewController.swift */,
 				D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */,
 				D0B2089223B4619300E361C4 /* InterestsViewController.swift */,
@@ -218,7 +214,6 @@
 				D09A660723BEB607002CFBC7 /* view.mp4 in Resources */,
 				D096B11323BEF1E800C857E6 /* splash.png in Resources */,
 				D064B09823C178A80047A54E /* blue.mp4 in Resources */,
-				D0E7A85423B706B500F662C2 /* statsNew.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +271,6 @@
 				D0F5A4CE23B0886400EEC6D8 /* ViewController.swift in Sources */,
 				D0F5A4CA23B0886400EEC6D8 /* AppDelegate.swift in Sources */,
 				D0F5A4D423B0886400EEC6D8 /* Music_Memory.xcdatamodeld in Sources */,
-				D0B2089123B45D8800E361C4 /* Interest.swift in Sources */,
 				D0C7D40023C01217003F8B40 /* sbMainViewController.swift in Sources */,
 				D096B11723BEF6F900C857E6 /* PageViewController.swift in Sources */,
 				D0F5A4CC23B0886400EEC6D8 /* SceneDelegate.swift in Sources */,

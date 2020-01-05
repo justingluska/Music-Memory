@@ -75,8 +75,8 @@ class InterestsViewController: UIViewController
         super.viewDidLoad()
         try? VideoBackground.shared.play(view: view, videoName: "blue", videoType: "mp4")
         collectionView.dataSource = self
-        let today = Date()
-        let cal = Calendar.current
+//        let today = Date()
+//        let cal = Calendar.current
         shareOutlet.layer.cornerRadius = 12
         backOutlet.layer.cornerRadius = 12
         collectionView.reloadData()
