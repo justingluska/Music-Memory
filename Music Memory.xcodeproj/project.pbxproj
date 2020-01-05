@@ -31,6 +31,7 @@
 		D0F5A4D423B0886400EEC6D8 /* Music_Memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0F5A4D223B0886400EEC6D8 /* Music_Memory.xcdatamodeld */; };
 		D0F5A4D623B0886700EEC6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F5A4D523B0886700EEC6D8 /* Assets.xcassets */; };
 		D0F5A4D923B0886700EEC6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F5A4D723B0886700EEC6D8 /* LaunchScreen.storyboard */; };
+		D0FB853323C189D900AB35E6 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FB853223C189D900AB35E6 /* PermissionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		D0F5A4D523B0886700EEC6D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0F5A4D823B0886700EEC6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0F5A4DA23B0886700EEC6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0FB853223C189D900AB35E6 /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
 		DE403E47C635DAC3E9AAB42D /* Pods-Music Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Memory.release.xcconfig"; path = "Target Support Files/Pods-Music Memory/Pods-Music Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */,
 				D0B2089223B4619300E361C4 /* InterestsViewController.swift */,
 				D0C7D3FF23C01217003F8B40 /* sbMainViewController.swift */,
+				D0FB853223C189D900AB35E6 /* PermissionViewController.swift */,
 				D0F5A4CF23B0886400EEC6D8 /* Main.storyboard */,
 				D0F5A4D523B0886700EEC6D8 /* Assets.xcassets */,
 				D0F5A4D723B0886700EEC6D8 /* LaunchScreen.storyboard */,
@@ -277,6 +280,7 @@
 				D0C7D40023C01217003F8B40 /* sbMainViewController.swift in Sources */,
 				D096B11723BEF6F900C857E6 /* PageViewController.swift in Sources */,
 				D0F5A4CC23B0886400EEC6D8 /* SceneDelegate.swift in Sources */,
+				D0FB853323C189D900AB35E6 /* PermissionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

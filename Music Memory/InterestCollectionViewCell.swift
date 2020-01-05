@@ -42,10 +42,10 @@ class InterestCollectionViewCell: UICollectionViewCell
             self.featuredImageView.image = UIImage.init(named: "unknownArtwork")
         }
         
-        if (self.dataSource.playbackStoreID == "0"){
-            playSongOutlet.isEnabled = false
-            playSongOutlet.isHidden = true
-        }
+//        if (self.dataSource.playbackStoreID == "0"){
+//            playSongOutlet.isEnabled = false
+//            playSongOutlet.isHidden = true
+//        }
         
         // Song Added Properties
         

@@ -7,11 +7,6 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Sanchezregular.otf">
-            <string>Sanchez-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--FirstTimeViewController-->
         <scene sceneID="qKl-Pi-ecZ">
@@ -20,14 +15,53 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="sbBlue" id="Kdn-9A-l5j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8de-Cj-0pq">
+                                <rect key="frame" x="46" y="244.5" width="283" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="0bF-hc-SYL"/>
+                                </constraints>
+                                <string key="text">With Music Hop, you can view which song you've added to your iTunes or Apple Music library on this day in time. Music Hop goes back as many years as possible to get you a collection of songs jumping back to the past.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Music Hop!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j2-6w-O39">
+                                <rect key="frame" x="40" y="100" width="295" height="98.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right -&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQb-qw-sUH">
+                                <rect key="frame" x="30" y="551" width="315" height="51"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59607843140000005" green="0.27295752850375199" blue="0.34099698468224338" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8de-Cj-0pq" firstAttribute="leading" secondItem="b6a-BR-MQv" secondAttribute="leading" constant="46" id="8qx-QQ-G2V"/>
+                            <constraint firstItem="b6a-BR-MQv" firstAttribute="trailing" secondItem="8j2-6w-O39" secondAttribute="trailing" constant="40" id="Ndu-w3-PQO"/>
+                            <constraint firstItem="8j2-6w-O39" firstAttribute="top" secondItem="b6a-BR-MQv" secondAttribute="top" constant="100" id="QaG-g5-cjc"/>
+                            <constraint firstItem="b6a-BR-MQv" firstAttribute="bottom" secondItem="IQb-qw-sUH" secondAttribute="bottom" constant="45" id="Y2c-jF-IBF"/>
+                            <constraint firstItem="b6a-BR-MQv" firstAttribute="trailing" secondItem="IQb-qw-sUH" secondAttribute="trailing" constant="30" id="Y6x-fr-7Oi"/>
+                            <constraint firstItem="8j2-6w-O39" firstAttribute="leading" secondItem="b6a-BR-MQv" secondAttribute="leading" constant="40" id="faG-5u-Mdb"/>
+                            <constraint firstItem="IQb-qw-sUH" firstAttribute="leading" secondItem="b6a-BR-MQv" secondAttribute="leading" constant="30" id="h8T-Jq-p0r"/>
+                            <constraint firstItem="b6a-BR-MQv" firstAttribute="trailing" secondItem="8de-Cj-0pq" secondAttribute="trailing" constant="46" id="j4A-tF-7OS"/>
+                            <constraint firstItem="8de-Cj-0pq" firstAttribute="top" secondItem="8j2-6w-O39" secondAttribute="bottom" constant="46" id="pTe-kq-KOa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b6a-BR-MQv"/>
                     </view>
                     <navigationItem key="navigationItem" id="3on-jo-CU5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tci-DD-xn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1337" y="-455"/>
+            <point key="canvasLocation" x="-1338.4000000000001" y="-455.62218890554726"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="5DS-J5-b54">
@@ -43,21 +77,59 @@
             </objects>
             <point key="canvasLocation" x="-2079" y="301"/>
         </scene>
-        <!--View Controller-->
+        <!--Permission View Controller-->
         <scene sceneID="lzI-uW-azG">
             <objects>
-                <viewController storyboardIdentifier="sbRed" id="vZa-Q0-dhX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sbRed" id="vZa-Q0-dhX" customClass="PermissionViewController" customModule="musicHop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="sbRed" id="FpQ-Lz-KPG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let the Kangaroo Inside!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFG-cA-Bjh">
+                                <rect key="frame" x="20" y="100" width="335" height="94"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="38"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="In order to jump through your library, we need access to. Please hit &quot;allow&quot; to give access." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-7M-vSP">
+                                <rect key="frame" x="46" y="240" width="283" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="i8d-SO-0Z6"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right -&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shX-bZ-IZL">
+                                <rect key="frame" x="30" y="551" width="315" height="51"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60170167679999997" green="0.27080267670000002" blue="0.33838838339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gnK-Mi-6oZ" firstAttribute="trailing" secondItem="QGv-7M-vSP" secondAttribute="trailing" constant="46" id="20V-3N-c9X"/>
+                            <constraint firstItem="gnK-Mi-6oZ" firstAttribute="trailing" secondItem="rFG-cA-Bjh" secondAttribute="trailing" constant="20" id="Ff6-za-bSM"/>
+                            <constraint firstItem="rFG-cA-Bjh" firstAttribute="top" secondItem="gnK-Mi-6oZ" secondAttribute="top" constant="100" id="GZH-Zc-Tzn"/>
+                            <constraint firstItem="gnK-Mi-6oZ" firstAttribute="trailing" secondItem="shX-bZ-IZL" secondAttribute="trailing" constant="30" id="IWz-5K-UTO"/>
+                            <constraint firstItem="QGv-7M-vSP" firstAttribute="leading" secondItem="gnK-Mi-6oZ" secondAttribute="leading" constant="46" id="emG-zk-61c"/>
+                            <constraint firstItem="shX-bZ-IZL" firstAttribute="leading" secondItem="gnK-Mi-6oZ" secondAttribute="leading" constant="30" id="icd-eV-pJT"/>
+                            <constraint firstItem="rFG-cA-Bjh" firstAttribute="leading" secondItem="gnK-Mi-6oZ" secondAttribute="leading" constant="20" id="m46-Ag-Y3H"/>
+                            <constraint firstItem="gnK-Mi-6oZ" firstAttribute="bottom" secondItem="shX-bZ-IZL" secondAttribute="bottom" constant="45" id="qKO-Nb-H0b"/>
+                            <constraint firstItem="QGv-7M-vSP" firstAttribute="top" secondItem="rFG-cA-Bjh" secondAttribute="bottom" constant="46" id="rMz-S5-tT2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gnK-Mi-6oZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="sDm-mE-BkJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVv-gk-aD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1135" y="216"/>
+            <point key="canvasLocation" x="-1135.2" y="215.44227886056973"/>
         </scene>
         <!--Sb Main View Controller-->
         <scene sceneID="OYA-pY-L4f">
@@ -67,26 +139,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="it's nostalgia time!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8on-VY-Ttf">
-                                <rect key="frame" x="53" y="139" width="268" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZE4-Ej-bpQ">
-                                <rect key="frame" x="83" y="269" width="213" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZE4-Ej-bpQ">
+                                <rect key="frame" x="30" y="542" width="315" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <size key="titleShadowOffset" width="3" height="3"/>
                                 <state key="normal" title="let's hear it">
-                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="letsTransition:" destination="BHI-sZ-NRo" eventType="touchUpInside" id="qE1-w4-JqQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One last step!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJh-lw-QoX">
+                                <rect key="frame" x="46" y="46" width="283" height="48.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="38"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="When i'm not lazy enough, i'll add notifications, but for now, just pretend this is the part where you allow them" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0g-ar-XFR">
+                                <rect key="frame" x="46" y="140.5" width="283" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="FDf-tH-0m7"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.60571891069999995" green="0.2667804956" blue="0.33425933120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="leC-h9-HmX" firstAttribute="trailing" secondItem="oJh-lw-QoX" secondAttribute="trailing" constant="46" id="3gg-cH-vxb"/>
+                            <constraint firstItem="i0g-ar-XFR" firstAttribute="top" secondItem="oJh-lw-QoX" secondAttribute="bottom" constant="46" id="8gF-qA-mgB"/>
+                            <constraint firstItem="leC-h9-HmX" firstAttribute="trailing" secondItem="i0g-ar-XFR" secondAttribute="trailing" constant="46" id="DuG-Xj-EuS"/>
+                            <constraint firstItem="ZE4-Ej-bpQ" firstAttribute="leading" secondItem="leC-h9-HmX" secondAttribute="leading" constant="30" id="ON3-X7-uvB"/>
+                            <constraint firstItem="i0g-ar-XFR" firstAttribute="leading" secondItem="leC-h9-HmX" secondAttribute="leading" constant="46" id="RJE-IQ-m6s"/>
+                            <constraint firstItem="oJh-lw-QoX" firstAttribute="top" secondItem="leC-h9-HmX" secondAttribute="top" constant="46" id="Rxc-Vc-mcf"/>
+                            <constraint firstItem="leC-h9-HmX" firstAttribute="bottom" secondItem="ZE4-Ej-bpQ" secondAttribute="bottom" constant="45" id="ein-pR-xed"/>
+                            <constraint firstItem="oJh-lw-QoX" firstAttribute="leading" secondItem="leC-h9-HmX" secondAttribute="leading" constant="46" id="fYp-zX-DQc"/>
+                            <constraint firstItem="leC-h9-HmX" firstAttribute="trailing" secondItem="ZE4-Ej-bpQ" secondAttribute="trailing" constant="30" id="n3G-LF-gDE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="leC-h9-HmX"/>
                     </view>
                     <navigationItem key="navigationItem" id="dWY-BB-Emh"/>
@@ -114,7 +208,7 @@
                                 <color key="shadowColor" red="1" green="0.62832026138030117" blue="0.80595225213690158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Music Throwbacks." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4D-83-keW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Music Throwbacks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4D-83-keW">
                                 <rect key="frame" x="30" y="163" width="315" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -252,13 +346,15 @@
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buQ-mu-PSB">
                                                     <rect key="frame" x="0.0" y="1" width="382" height="386"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.69978060787671248" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.75144477739726045" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVJ-tX-8Ei">
-                                                    <rect key="frame" x="20" y="20" width="342" height="29"/>
-                                                    <fontDescription key="fontDescription" name="Sanchez-Regular" family="Sanchez " pointSize="17"/>
+                                                    <rect key="frame" x="20" y="20" width="342" height="38"/>
+                                                    <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="17"/>
+                                                    <size key="titleShadowOffset" width="1" height="1"/>
                                                     <state key="normal" title="PLAY SONG ▶️">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="playSong:" destination="PrH-63-kw7" eventType="touchUpInside" id="ONy-Qb-qvP"/>

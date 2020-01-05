@@ -69,34 +69,32 @@ class ViewController: UIViewController {
         }
     }
     
+
     @IBAction func addToList(_ sender: Any) {
         guard let songs = MPMediaQuery.songs().items
                    else {
                    return
                }
-        let dateGroup = MusicWithDate()
-        var songString:String = ""
+        
         var songName = [String]()
+        let dateGroup = MusicWithDate()
                 for song in songs {
                 let today = Date()
+                    
                     let then = song.dateAdded
                     let calendar = Calendar.current
                     let day = calendar.component(.day, from: then)
                     let month = calendar.component(.month, from:then)
-                    
                     if (month == calendar.component(.month, from: today)){
                         if (day == calendar.component(.day, from: today)){
                             songName.append(song.title!)
-                            
                             dateGroup.date = song.dateAdded
                             dateGroup.music.append(song)
                             dataSource.append(dateGroup)
-                            print(dateGroup)
                             }
                         }
                 }
-        print(songName)
-        /// self.groupSongs() adds duplicates, do not use.
+
         let main = UIStoryboard(name: "Main", bundle: nil)
         let resultVC = main.instantiateViewController(withIdentifier: "CardViewController") as? InterestsViewController
         resultVC?.dataSource = dateGroup
@@ -108,11 +106,6 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
     }
-    
-    @IBOutlet weak var textDisplay: UITextView!
-    
-    
-    @IBOutlet weak var label: UITextView!
     
     var songArray: NSMutableArray = []
     
