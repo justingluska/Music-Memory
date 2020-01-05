@@ -79,6 +79,7 @@ class InterestsViewController: UIViewController
         shareOutlet.layer.cornerRadius = 12
         backOutlet.layer.cornerRadius = 12
         collectionView.reloadData()
+        
     }
     
     

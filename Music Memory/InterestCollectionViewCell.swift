@@ -31,7 +31,8 @@ class InterestCollectionViewCell: UICollectionViewCell
     }
     
     func updateUI(){
-        
+        playSongOutlet.isEnabled = false
+        playSongOutlet.isHidden = true
         featuredImageView.layer.cornerRadius = 15
         test.layer.cornerRadius = 15
         featuredImageView.backgroundColor = UIColor.white

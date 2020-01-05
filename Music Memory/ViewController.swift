@@ -108,68 +108,7 @@ class ViewController: UIViewController {
     }
     
     var songArray: NSMutableArray = []
-    
-    func groupSongs() {
-        ///
-        guard let songs = MPMediaQuery.songs().items
-            else {
-            return
-        }
-
         
-        /// ^ Above will be displayed at the page view controller
-        for eachSong in songs {
-            //print("Date: \(eachSong.dateAdded), Title: \(eachSong.title)")
-            if let dateGroup = self.dataSource.filter({ (dateGroup) -> Bool in
-                let order = Calendar.current.compare(eachSong.dateAdded, to: dateGroup.date, toGranularity: .day)
-                switch order {
-                case .orderedDescending:
-                    //print("DESCENDING")
-                    return false
-                case .orderedAscending:
-                    //print("ASCENDING")
-                    return false
-                case .orderedSame:
-                    //print("SAME")
-                    return true
-                }
-            }).first {
-                dateGroup.music.append(eachSong)
-            } else {
-                let dateGroup = MusicWithDate()
-                dateGroup.date = eachSong.dateAdded
-                dateGroup.music.append(eachSong)
-                self.dataSource.append(dateGroup)
-            }
-        }
-        self.dataSource.sort(by: { $0.date.compare($1.date) == .orderedDescending })
-    }
-    
-    @IBAction func didTapOpenCardView(_ sender: Any) {
-        self.groupSongs()
-        if let todaysRecord = self.dataSource.filter({ (dateGroup) -> Bool in
-            let order = Calendar.current.compare(Date(), to: dateGroup.date, toGranularity: .day)
-            switch order {
-            case .orderedDescending:
-                //print("DESCENDING")
-                return false
-            case .orderedAscending:
-                //print("ASCENDING")
-                return false
-            case .orderedSame:
-                //print("SAME")
-                return true
-            }
-        }).first {
-            let main = UIStoryboard(name: "Main", bundle: nil)
-            let resultVC = main.instantiateViewController(withIdentifier: "CardViewController") as? InterestsViewController
-            resultVC?.dataSource = todaysRecord
-            self.present(resultVC!, animated: true, completion: nil)
-        }
-      interstitial.present(fromRootViewController: self)
-    }
-    
-    
     
 }
 
