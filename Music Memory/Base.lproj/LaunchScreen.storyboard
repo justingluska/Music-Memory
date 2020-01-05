@@ -15,15 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6K-Vc-nxv">
-                                <rect key="frame" x="-20" y="4" width="454" height="898"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="r6K-Vc-nxv">
+                                <rect key="frame" x="-20" y="-16" width="454" height="938"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r6K-Vc-nxv" secondAttribute="trailing" constant="-20" id="51g-om-J6f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r6K-Vc-nxv" secondAttribute="bottom" constant="-40" id="6py-ve-tOr"/>
-                            <constraint firstItem="r6K-Vc-nxv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-40" id="BZa-Hg-8eZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r6K-Vc-nxv" secondAttribute="bottom" constant="-60" id="6py-ve-tOr"/>
+                            <constraint firstItem="r6K-Vc-nxv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-60" id="BZa-Hg-8eZ"/>
                             <constraint firstItem="r6K-Vc-nxv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-20" id="t5l-oU-xw9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -34,4 +34,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash.png" width="1920" height="1076"/>
+    </resources>
 </document>

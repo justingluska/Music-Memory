@@ -9,10 +9,11 @@
 import UIKit
 import SwiftVideoBackground
 import MediaPlayer
+import GoogleMobileAds
 
 class InterestsViewController: UIViewController
 {
-    
+    var interstitial: GADInterstitial!
     @IBOutlet weak var shareOutlet: UIButton!
     @IBOutlet weak var backOutlet: UIButton!
     
@@ -79,7 +80,12 @@ class InterestsViewController: UIViewController
         shareOutlet.layer.cornerRadius = 12
         backOutlet.layer.cornerRadius = 12
         collectionView.reloadData()
-        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-9134328104554845/9661741527")
+        let request = GADRequest()
+        interstitial.load(request)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            self.interstitial.present(fromRootViewController: self)
+        }
     }
     
     

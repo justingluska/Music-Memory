@@ -198,7 +198,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="B1V-zw-pUu">
-                                <rect key="frame" x="-4" y="-40" width="383" height="747"/>
+                                <rect key="frame" x="-4" y="-60" width="383" height="787"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Hop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIY-U1-Dfi">
                                 <rect key="frame" x="30" y="100" width="315" height="48"/>
@@ -256,11 +256,11 @@
                             <constraint firstItem="B1V-zw-pUu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="efL-eY-tLS"/>
                             <constraint firstItem="kFo-oi-EBU" firstAttribute="top" secondItem="Ulb-ex-Qub" secondAttribute="bottom" constant="40" id="fUT-6I-4Nm"/>
                             <constraint firstItem="wIY-U1-Dfi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="h9f-CZ-FD7"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="B1V-zw-pUu" secondAttribute="bottom" constant="-40" id="iTk-cK-xth"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="B1V-zw-pUu" secondAttribute="bottom" constant="-60" id="iTk-cK-xth"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l4D-83-keW" secondAttribute="trailing" constant="30" id="k54-Vi-QUH"/>
                             <constraint firstItem="Ulb-ex-Qub" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="lMV-6U-Zo9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="B1V-zw-pUu" secondAttribute="trailing" constant="-20" id="m29-lc-3Dl"/>
-                            <constraint firstItem="B1V-zw-pUu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-40" id="tC2-lo-OQb"/>
+                            <constraint firstItem="B1V-zw-pUu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-60" id="tC2-lo-OQb"/>
                             <constraint firstItem="l4D-83-keW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="vuO-QR-eh6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

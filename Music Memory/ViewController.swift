@@ -10,8 +10,6 @@ import UIKit
 import MediaPlayer
 import StoreKit
 import Foundation
-import SwiftVideoBackground
-import GoogleMobileAds
 
 struct OverviewData {
     var totalPlays: Int
@@ -40,7 +38,6 @@ class ViewController: UIViewController {
     var songArtist: Array = [""]
     var songPlays: Array = [""]
     var dataSource : [MusicWithDate] = []
-    var interstitial: GADInterstitial!
     var test: UIImage!
     
     @IBOutlet weak var helpButton: UIButton!
@@ -48,9 +45,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-9134328104554845/9661741527")
-        let request = GADRequest()
-        interstitial.load(request)
         hopButton.layer.cornerRadius = 20
         helpButton.layer.cornerRadius = 20
         
@@ -64,12 +58,13 @@ class ViewController: UIViewController {
             UserDefaults.standard.synchronize()
 
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "PageViewController") as! UIViewController
+            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "PageViewController")
             self.present(vc, animated: true, completion: nil)
         }
     }
     
-
+    var calendar = Calendar.current
+    let date = Date()
     @IBAction func addToList(_ sender: Any) {
         guard let songs = MPMediaQuery.songs().items
                    else {
@@ -78,11 +73,11 @@ class ViewController: UIViewController {
         
         var songName = [String]()
         let dateGroup = MusicWithDate()
+        
                 for song in songs {
                 let today = Date()
                     
                     let then = song.dateAdded
-                    let calendar = Calendar.current
                     let day = calendar.component(.day, from: then)
                     let month = calendar.component(.month, from:then)
                     if (month == calendar.component(.month, from: today)){
@@ -94,13 +89,17 @@ class ViewController: UIViewController {
                             }
                         }
                 }
-
+        if dataSource.count == 0 {
+            songName.append("None Today")
+            dateGroup.date = date
+            dataSource.append(dateGroup)
+        }
+        
         let main = UIStoryboard(name: "Main", bundle: nil)
         let resultVC = main.instantiateViewController(withIdentifier: "CardViewController") as? InterestsViewController
         resultVC?.dataSource = dateGroup
         resultVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(resultVC!, animated: true, completion: nil)
-        interstitial.present(fromRootViewController: self)
         
     }
     
