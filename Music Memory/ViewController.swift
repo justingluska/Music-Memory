@@ -43,8 +43,6 @@ class ViewController: UIViewController {
     var interstitial: GADInterstitial!
     var test: UIImage!
     
-    
-    
     @IBOutlet weak var hopButton: UIButton!
     
     override func viewDidLoad() {
@@ -100,6 +98,7 @@ class ViewController: UIViewController {
         let main = UIStoryboard(name: "Main", bundle: nil)
         let resultVC = main.instantiateViewController(withIdentifier: "CardViewController") as? InterestsViewController
         resultVC?.dataSource = dateGroup
+        resultVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(resultVC!, animated: true, completion: nil)
         interstitial.present(fromRootViewController: self)
         

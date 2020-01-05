@@ -20,9 +20,7 @@ class InterestCollectionViewCell: UICollectionViewCell
         var temp:[String] = []
         temp.append(dataSource.playbackStoreID)
         let musicPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
-        // Add a playback queue containing all songs on the device.
         musicPlayer.setQueue(with: temp)
-        // Start playing from the beginning of the queue.
         musicPlayer.play()
     }
     
@@ -61,6 +59,11 @@ class InterestCollectionViewCell: UICollectionViewCell
             self.featuredImageView.image = image
         } else {
             self.featuredImageView.image = UIImage.init(named: "unknownArtwork")
+        }
+        
+        if (self.dataSource.playbackStoreID == "0"){
+            playSongOutlet.isEnabled = false
+            playSongOutlet.isHidden = true
         }
         
         // Song Added Properties
