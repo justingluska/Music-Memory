@@ -189,8 +189,36 @@
                                     <constraint firstAttribute="height" constant="1" id="9Aq-Ba-ZWx"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SONGS ADDED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rt-za-V6e">
+                                <rect key="frame" x="18" y="53" width="339" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqx-eJ-W8i">
+                                <rect key="frame" x="50" y="549" width="275" height="37"/>
+                                <color key="backgroundColor" red="0.53138307796457451" green="0.17669983798847197" blue="0.70340260152284262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
+                                <state key="normal" title="Share with Friends">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareSongs:" destination="BLt-vt-bGR" eventType="touchUpInside" id="FF6-Ej-sge"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpm-9J-thy">
+                                <rect key="frame" x="50" y="610" width="275" height="37"/>
+                                <color key="backgroundColor" red="0.53138307799999995" green="0.176699838" blue="0.7034026015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareSongs:" destination="BLt-vt-bGR" eventType="touchUpInside" id="y96-hl-ozk"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="InterestsViewController" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H2K-xJ-B1J">
-                                <rect key="frame" x="5" y="121" width="365" height="425"/>
+                                <rect key="frame" x="5" y="121" width="365" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="20" id="cP7-xB-BlX">
                                     <size key="itemSize" width="382" height="388"/>
@@ -200,7 +228,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterestCollectionViewCell" id="PrH-63-kw7" customClass="InterestCollectionViewCell" customModule="musicHop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="18.5" width="382" height="388"/>
+                                        <rect key="frame" x="0.0" y="7.5" width="382" height="388"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kji-We-u54">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="388"/>
@@ -257,22 +285,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SONGS ADDED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rt-za-V6e">
-                                <rect key="frame" x="18" y="53" width="339" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqx-eJ-W8i">
-                                <rect key="frame" x="50" y="546" width="275" height="37"/>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
-                                <state key="normal" title="Share Todays Music...">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="shareSongs:" destination="BLt-vt-bGR" eventType="touchUpInside" id="FF6-Ej-sge"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -284,13 +296,16 @@
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="6rt-za-V6e" secondAttribute="trailing" constant="18" id="GrO-qj-swf"/>
                             <constraint firstItem="SE8-vs-TOp" firstAttribute="trailing" secondItem="9bs-fM-6tM" secondAttribute="trailingMargin" constant="5" id="PZo-1X-0z0"/>
                             <constraint firstItem="tIz-Bu-D8s" firstAttribute="centerX" secondItem="9bs-fM-6tM" secondAttribute="centerX" id="U9V-Kl-RIa"/>
-                            <constraint firstItem="iqx-eJ-W8i" firstAttribute="top" secondItem="H2K-xJ-B1J" secondAttribute="bottom" id="aqY-CU-zc9"/>
+                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="Gpm-9J-thy" secondAttribute="trailing" constant="50" id="UGT-au-io8"/>
+                            <constraint firstItem="iqx-eJ-W8i" firstAttribute="top" secondItem="H2K-xJ-B1J" secondAttribute="bottom" constant="25" id="aqY-CU-zc9"/>
+                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="bottom" secondItem="Gpm-9J-thy" secondAttribute="bottom" constant="20" id="atO-td-7K2"/>
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="iqx-eJ-W8i" secondAttribute="trailing" constant="50" id="dqD-ER-OSr"/>
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="H2K-xJ-B1J" secondAttribute="trailing" constant="5" id="eRx-Y2-ypi"/>
                             <constraint firstItem="SE8-vs-TOp" firstAttribute="leading" secondItem="9bs-fM-6tM" secondAttribute="leadingMargin" constant="5" id="iAf-vW-BcN"/>
                             <constraint firstItem="tIz-Bu-D8s" firstAttribute="centerY" secondItem="9bs-fM-6tM" secondAttribute="centerY" id="s2Z-mk-vtR"/>
                             <constraint firstItem="6rt-za-V6e" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="18" id="vCB-xp-ROj"/>
-                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="bottom" secondItem="H2K-xJ-B1J" secondAttribute="bottom" constant="121" id="wM0-4B-bxV"/>
+                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="bottom" secondItem="H2K-xJ-B1J" secondAttribute="bottom" constant="143" id="wM0-4B-bxV"/>
+                            <constraint firstItem="Gpm-9J-thy" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="50" id="zlC-Fv-29o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LEm-MZ-FNm"/>
                     </view>

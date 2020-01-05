@@ -67,7 +67,7 @@ class InterestsViewController: UIViewController
         super.viewDidLoad()
         try? VideoBackground.shared.play(view: view, videoName: "stats", videoType: "mp4")
         collectionView.dataSource = self
-        collectionView.layer.cornerRadius = 10
+        collectionView.layer.cornerRadius = 25
         let today = Date()
         let cal = Calendar.current
         //let day = cal.ordinality(of: .day, in: .year, for: today)
