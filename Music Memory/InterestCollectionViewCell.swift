@@ -63,7 +63,7 @@ class InterestCollectionViewCell: UICollectionViewCell
         let time = (Double(self.dataSource.playCount)/60) * self.dataSource.playbackDuration
         let listened = "Minutes Listened: \(Double(round(100*time)/100))"
         let plays = self.dataSource.playCount
-        var final = "From \(year):\n\n\(title)\n\n\(artist)\n\n\(plays) Plays\n\nLast Played on \(lastPlayedFormatted)\n\n\(listened)"
+        let final = "From \(year):\n\n\(title)\n\n\(artist)\n\n\(plays) Plays\n\nLast Played on \(lastPlayedFormatted)\n\n\(listened)"
         interestTitleLabel.text = final
         
     }
