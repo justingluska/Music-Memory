@@ -52,7 +52,7 @@
 		D0E517CA23B6CB5100B62385 /* newstart.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = newstart.mp4; sourceTree = SOURCE_ROOT; };
 		D0E7A84D23B6D39200F662C2 /* stats.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = stats.mp4; sourceTree = SOURCE_ROOT; };
 		D0E7A85323B706B500F662C2 /* statsNew.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = statsNew.mp4; sourceTree = SOURCE_ROOT; };
-		D0F5A4C623B0886400EEC6D8 /* musicHop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musicHop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0F5A4C623B0886400EEC6D8 /* Music Hop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Hop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F5A4C923B0886400EEC6D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F5A4CB23B0886400EEC6D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0F5A4CD23B0886400EEC6D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		D0F5A4C723B0886400EEC6D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0F5A4C623B0886400EEC6D8 /* musicHop.app */,
+				D0F5A4C623B0886400EEC6D8 /* Music Hop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 			);
 			name = "Music Memory";
 			productName = "Music Memory";
-			productReference = D0F5A4C623B0886400EEC6D8 /* musicHop.app */;
+			productReference = D0F5A4C623B0886400EEC6D8 /* Music Hop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -430,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.justingluska.Music-Memory";
-				PRODUCT_NAME = musicHop;
+				PRODUCT_NAME = "Music Hop";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -451,7 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.justingluska.Music-Memory";
-				PRODUCT_NAME = musicHop;
+				PRODUCT_NAME = "Music Hop";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
