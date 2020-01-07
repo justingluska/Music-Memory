@@ -242,6 +242,9 @@
                                     <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="l5d-6h-7s5" kind="show" id="wh7-fR-9Uc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -274,6 +277,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="118.29085457271366"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="auF-s3-w02">
+            <objects>
+                <viewController id="l5d-6h-7s5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gtk-Xp-bg2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DM-kX-7zx">
+                                <rect key="frame" x="45" y="40" width="285" height="48.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="38"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kp-Fa-MqD">
+                                <rect key="frame" x="46" y="133.5" width="283" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="374" id="bDL-rM-esE"/>
+                                </constraints>
+                                <string key="text">Every day you add new music to your iTunes library. With MusicHop, we gather all the songs you've added on this day and show you them to present a sense of nostalgia. See the songs you've added today, a year ago today, and 8 years ago today all on one page!</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made by justin gluska" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ3-fH-pjJ">
+                                <rect key="frame" x="34" y="589" width="307" height="38"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="29"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60571891069999995" green="0.2667804956" blue="0.33425933120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4DM-kX-7zx" firstAttribute="leading" secondItem="GWd-4X-zXA" secondAttribute="leading" constant="45" id="76q-KS-d0R"/>
+                            <constraint firstItem="GWd-4X-zXA" firstAttribute="trailing" secondItem="9kp-Fa-MqD" secondAttribute="trailing" constant="46" id="9Kb-TR-PrJ"/>
+                            <constraint firstItem="9kp-Fa-MqD" firstAttribute="leading" secondItem="GWd-4X-zXA" secondAttribute="leading" constant="46" id="EZp-RL-uMp"/>
+                            <constraint firstItem="GWd-4X-zXA" firstAttribute="trailing" secondItem="4DM-kX-7zx" secondAttribute="trailing" constant="45" id="Kpt-bN-YNe"/>
+                            <constraint firstItem="BZ3-fH-pjJ" firstAttribute="leading" secondItem="GWd-4X-zXA" secondAttribute="leading" constant="34" id="Tdd-y0-WXY"/>
+                            <constraint firstItem="GWd-4X-zXA" firstAttribute="trailing" secondItem="BZ3-fH-pjJ" secondAttribute="trailing" constant="34" id="ZHv-Nn-AIi"/>
+                            <constraint firstItem="9kp-Fa-MqD" firstAttribute="top" secondItem="4DM-kX-7zx" secondAttribute="bottom" constant="45" id="a8p-th-TQb"/>
+                            <constraint firstItem="GWd-4X-zXA" firstAttribute="bottom" secondItem="BZ3-fH-pjJ" secondAttribute="bottom" constant="20" id="jlM-vd-8SN"/>
+                            <constraint firstItem="4DM-kX-7zx" firstAttribute="top" secondItem="GWd-4X-zXA" secondAttribute="top" constant="40" id="wjO-o8-1vx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GWd-4X-zXA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RJy-iG-hQo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOH-O3-hd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="928.78560719640188"/>
         </scene>
         <!--Interests View Controller-->
         <scene sceneID="24D-HS-xVu">
