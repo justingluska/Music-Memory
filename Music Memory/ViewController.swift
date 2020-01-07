@@ -89,11 +89,6 @@ class ViewController: UIViewController {
                             }
                         }
                 }
-        if dataSource.count == 0 {
-            songName.append("None Today")
-            dateGroup.date = date
-            dataSource.append(dateGroup)
-        }
         
         let main = UIStoryboard(name: "Main", bundle: nil)
         let resultVC = main.instantiateViewController(withIdentifier: "CardViewController") as? InterestsViewController

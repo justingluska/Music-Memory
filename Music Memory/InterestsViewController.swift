@@ -17,8 +17,8 @@ class InterestsViewController: UIViewController
     @IBOutlet weak var shareOutlet: UIButton!
     @IBOutlet weak var backOutlet: UIButton!
     
-    var songName = [String]()
     @IBAction func shareSongs(_ sender: Any) {
+        var songName = [String]()
         guard let songs = MPMediaQuery.songs().items
                    else {
                    return
@@ -39,11 +39,21 @@ class InterestsViewController: UIViewController
                             }
                         }
                 }
-       
-        for element in songName.indices.dropLast() {
-            songString = songName[element] + ", " + songString
+        if songName.count == 0 {
+            let alert = UIAlertController(title: "No Songs Today", message: "You didn't add any new music on this day. Check back again tomorrow to share your music!", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-        songString = songString + "and " + songName[(songName.count-1)]
+        else if songName.count != 1{
+            for element in songName.indices.dropLast() {
+                songString = songName[element] + ", " + songString
+            }
+            songString = songString + "and " + songName[(songName.count-1)]
+        }
+        else if songName.count == 1{
+            songString = songName[0]
+        }
+        
         let items: [Any] = ["I discovered the music \(songString) on this day of the year. See your throwback songs by downloading musicHop on the App Store!"]
         // , URL(string: "https://www.justingluska.com")!
         /// To add the album artwork, use the code below
@@ -52,6 +62,7 @@ class InterestsViewController: UIViewController
         present(ac, animated: true)
     }
     
+    @IBOutlet weak var todaysDate: UILabel!
     
 
     @IBAction func goBackButton(_ sender: UIButton) {
@@ -74,12 +85,22 @@ class InterestsViewController: UIViewController
     override func viewDidLoad(){
         super.viewDidLoad()
         try? VideoBackground.shared.play(view: view, videoName: "blue", videoType: "mp4")
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "LLL"
+        let cal = Calendar.current
+        let mon = cal.component(.month, from: date)
+        let monthName = DateFormatter().monthSymbols[mon - 1]
+        let day = cal.component(.day, from: date)
+        todaysDate.text = "\(monthName) \(day)"
         collectionView.dataSource = self
-//        let today = Date()
-//        let cal = Calendar.current
         shareOutlet.layer.cornerRadius = 12
         backOutlet.layer.cornerRadius = 12
         collectionView.reloadData()
+        if self.dataSource.music == []{
+            noSongLabel.text = "You haven't added any songs on this day today! Check back tomorrow!"
+            noSongLabel.isHidden = false
+        }
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9134328104554845/9661741527")
         let request = GADRequest()
         interstitial.load(request)
@@ -87,6 +108,8 @@ class InterestsViewController: UIViewController
             self.interstitial.present(fromRootViewController: self)
         }
     }
+    
+    @IBOutlet weak var noSongLabel: UITextView!
     
     
 }
@@ -122,7 +145,9 @@ extension InterestsViewController: UICollectionViewDataSource
     
 }
 
-/*extension InterestsViewController : UIScrollViewDelegate, UICollectionViewDelegate
+
+/// Not really sure what this does. I found it on a tutorial
+extension InterestsViewController : UIScrollViewDelegate, UICollectionViewDelegate
 {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
@@ -133,4 +158,4 @@ extension InterestsViewController: UICollectionViewDataSource
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
         targetContentOffset.pointee = offset
     }
-}*/
+}
