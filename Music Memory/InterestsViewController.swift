@@ -10,6 +10,7 @@ import UIKit
 import SwiftVideoBackground
 import MediaPlayer
 import GoogleMobileAds
+import StoreKit
 
 class InterestsViewController: UIViewController
 {
@@ -54,8 +55,8 @@ class InterestsViewController: UIViewController
             songString = songName[0]
         }
         
-        let items: [Any] = ["I discovered the music \(songString) on this day of the year. See your throwback songs by downloading musicHop on the App Store!"]
-        // , URL(string: "https://www.justingluska.com")!
+        let items: [Any] = ["I discovered the music \(songString) on this day of the year. See your throwback songs by downloading musicHop!", URL(string: "https://apps.apple.com/us/app/music-hop-daily-throwbacks/id1494063897")!]
+        // , URL(string: "https://apps.apple.com/us/app/music-hop-daily-throwbacks/id1494063897")!
         /// To add the album artwork, use the code below
         // , imageViewOutlet.image!
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
@@ -107,6 +108,13 @@ class InterestsViewController: UIViewController
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.interstitial.present(fromRootViewController: self)
         }
+        let temp = Int.random(in: 0 ..< 10)
+        if temp == 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                SKStoreReviewController.requestReview()
+            }
+        }
+        
     }
     
     @IBOutlet weak var noSongLabel: UITextView!

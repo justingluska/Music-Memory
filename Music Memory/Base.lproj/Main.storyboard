@@ -102,7 +102,7 @@
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right -&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shX-bZ-IZL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe left -&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shX-bZ-IZL">
                                 <rect key="frame" x="30" y="551" width="315" height="51"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                 <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -278,10 +278,10 @@
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="auF-s3-w02">
             <objects>
-                <viewController id="l5d-6h-7s5" sceneMemberID="viewController">
+                <viewController id="l5d-6h-7s5" customClass="SettingsViewController" customModule="Music_Hop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gtk-Xp-bg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,13 +295,13 @@
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kp-Fa-MqD">
-                                <rect key="frame" x="46" y="133.5" width="283" height="374"/>
+                                <rect key="frame" x="46" y="133.5" width="283" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="374" id="bDL-rM-esE"/>
+                                    <constraint firstAttribute="height" constant="300" id="bDL-rM-esE"/>
                                 </constraints>
                                 <string key="text">Every day you add new music to your iTunes library. With MusicHop, we gather all the songs you've added on this day and show you them to present a sense of nostalgia. See the songs you've added today, a year ago today, and 8 years ago today all on one page!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made by justin gluska" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ3-fH-pjJ">
@@ -312,22 +312,58 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXu-J3-CFP">
+                                <rect key="frame" x="55" y="441.5" width="265" height="60"/>
+                                <color key="backgroundColor" red="0.60146335660000005" green="0.0" blue="0.039354827090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <size key="titleShadowOffset" width="3" height="3"/>
+                                <state key="normal" title="leave review">
+                                    <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="leaveReview:" destination="l5d-6h-7s5" eventType="touchUpInside" id="bRa-bb-G7a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3M-kt-EmD">
+                                <rect key="frame" x="55" y="516.5" width="265" height="60"/>
+                                <color key="backgroundColor" red="0.60146335660000005" green="0.0" blue="0.039354827090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <size key="titleShadowOffset" width="3" height="3"/>
+                                <state key="normal" title="share">
+                                    <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButton:" destination="l5d-6h-7s5" eventType="touchUpInside" id="dVa-qd-sME"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.60571891069999995" green="0.2667804956" blue="0.33425933120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="MXu-J3-CFP" firstAttribute="top" secondItem="9kp-Fa-MqD" secondAttribute="bottom" constant="8" symbolic="YES" id="5xv-Ua-8dg"/>
                             <constraint firstItem="4DM-kX-7zx" firstAttribute="leading" secondItem="GWd-4X-zXA" secondAttribute="leading" constant="45" id="76q-KS-d0R"/>
                             <constraint firstItem="GWd-4X-zXA" firstAttribute="trailing" secondItem="9kp-Fa-MqD" secondAttribute="trailing" constant="46" id="9Kb-TR-PrJ"/>
                             <constraint firstItem="9kp-Fa-MqD" firstAttribute="leading" secondItem="GWd-4X-zXA" secondAttribute="leading" constant="46" id="EZp-RL-uMp"/>
+                            <constraint firstItem="y3M-kt-EmD" firstAttribute="leading" secondItem="GWd-4X-zXA" secondAttribute="leading" constant="55" id="IaE-CW-9J9"/>
                             <constraint firstItem="GWd-4X-zXA" firstAttribute="trailing" secondItem="4DM-kX-7zx" secondAttribute="trailing" constant="45" id="Kpt-bN-YNe"/>
+                            <constraint firstItem="GWd-4X-zXA" firstAttribute="trailing" secondItem="MXu-J3-CFP" secondAttribute="trailing" constant="55" id="Lel-8a-8Rk"/>
+                            <constraint firstItem="MXu-J3-CFP" firstAttribute="leading" secondItem="GWd-4X-zXA" secondAttribute="leading" constant="55" id="Qpd-qZ-gS8"/>
                             <constraint firstItem="BZ3-fH-pjJ" firstAttribute="leading" secondItem="GWd-4X-zXA" secondAttribute="leading" constant="34" id="Tdd-y0-WXY"/>
                             <constraint firstItem="GWd-4X-zXA" firstAttribute="trailing" secondItem="BZ3-fH-pjJ" secondAttribute="trailing" constant="34" id="ZHv-Nn-AIi"/>
                             <constraint firstItem="9kp-Fa-MqD" firstAttribute="top" secondItem="4DM-kX-7zx" secondAttribute="bottom" constant="45" id="a8p-th-TQb"/>
+                            <constraint firstItem="GWd-4X-zXA" firstAttribute="trailing" secondItem="y3M-kt-EmD" secondAttribute="trailing" constant="55" id="eYQ-Z5-nN3"/>
                             <constraint firstItem="GWd-4X-zXA" firstAttribute="bottom" secondItem="BZ3-fH-pjJ" secondAttribute="bottom" constant="20" id="jlM-vd-8SN"/>
+                            <constraint firstItem="y3M-kt-EmD" firstAttribute="top" secondItem="MXu-J3-CFP" secondAttribute="bottom" constant="15" id="rex-LR-vIb"/>
                             <constraint firstItem="4DM-kX-7zx" firstAttribute="top" secondItem="GWd-4X-zXA" secondAttribute="top" constant="40" id="wjO-o8-1vx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GWd-4X-zXA"/>
                     </view>
                     <navigationItem key="navigationItem" id="RJy-iG-hQo"/>
+                    <connections>
+                        <outlet property="leaveReviewOutlet" destination="MXu-J3-CFP" id="ADS-tk-1Hw"/>
+                        <outlet property="shareOutlet" destination="y3M-kt-EmD" id="G3z-0x-Zq8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOH-O3-hd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

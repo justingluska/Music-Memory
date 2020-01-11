@@ -12,6 +12,7 @@
 		D049F31823C1623C004F7CFE /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = D049F31723C1623C004F7CFE /* help.png */; };
 		D064B09823C178A80047A54E /* blue.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D064B09723C178A80047A54E /* blue.mp4 */; };
 		D064B09A23C17DBF0047A54E /* Sanchezregular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D064B09923C17DBF0047A54E /* Sanchezregular.otf */; };
+		D095ABBF23C97FC600445B3F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095ABBE23C97FC600445B3F /* SettingsViewController.swift */; };
 		D096B11323BEF1E800C857E6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D096B11223BEF1E800C857E6 /* splash.png */; };
 		D096B11723BEF6F900C857E6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096B11623BEF6F900C857E6 /* PageViewController.swift */; };
 		D0B2088F23B45B5100E361C4 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */; };
@@ -34,6 +35,7 @@
 		D049F31723C1623C004F7CFE /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = SOURCE_ROOT; };
 		D064B09723C178A80047A54E /* blue.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = blue.mp4; sourceTree = SOURCE_ROOT; };
 		D064B09923C17DBF0047A54E /* Sanchezregular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sanchezregular.otf; sourceTree = SOURCE_ROOT; };
+		D095ABBE23C97FC600445B3F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D096B11223BEF1E800C857E6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = SOURCE_ROOT; };
 		D096B11623BEF6F900C857E6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +104,8 @@
 		D0F5A4C823B0886400EEC6D8 /* Music Memory */ = {
 			isa = PBXGroup;
 			children = (
+				D0F5A4CF23B0886400EEC6D8 /* Main.storyboard */,
+				D0F5A4D723B0886700EEC6D8 /* LaunchScreen.storyboard */,
 				D0F5A4C923B0886400EEC6D8 /* AppDelegate.swift */,
 				D0F5A4CB23B0886400EEC6D8 /* SceneDelegate.swift */,
 				D0F5A4CD23B0886400EEC6D8 /* ViewController.swift */,
@@ -110,9 +114,8 @@
 				D0133DB323C55668004A6FEA /* InterestsViewController.swift */,
 				D0C7D3FF23C01217003F8B40 /* sbMainViewController.swift */,
 				D0FB853223C189D900AB35E6 /* PermissionViewController.swift */,
-				D0F5A4CF23B0886400EEC6D8 /* Main.storyboard */,
+				D095ABBE23C97FC600445B3F /* SettingsViewController.swift */,
 				D0F5A4D523B0886700EEC6D8 /* Assets.xcassets */,
-				D0F5A4D723B0886700EEC6D8 /* LaunchScreen.storyboard */,
 				D096B11223BEF1E800C857E6 /* splash.png */,
 				D0F5A4DA23B0886700EEC6D8 /* Info.plist */,
 				D049F31723C1623C004F7CFE /* help.png */,
@@ -246,6 +249,7 @@
 			files = (
 				D0B2088F23B45B5100E361C4 /* InterestCollectionViewCell.swift in Sources */,
 				D0F5A4CE23B0886400EEC6D8 /* ViewController.swift in Sources */,
+				D095ABBF23C97FC600445B3F /* SettingsViewController.swift in Sources */,
 				D0F5A4CA23B0886400EEC6D8 /* AppDelegate.swift in Sources */,
 				D0F5A4D423B0886400EEC6D8 /* Music_Memory.xcdatamodeld in Sources */,
 				D0133DB423C55668004A6FEA /* InterestsViewController.swift in Sources */,
@@ -399,13 +403,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52GURPQBA2;
 				INFOPLIST_FILE = "Music Memory/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.justingluska.Music-Memory";
 				PRODUCT_NAME = "Music Hop";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -421,13 +426,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 52GURPQBA2;
 				INFOPLIST_FILE = "Music Memory/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.justingluska.Music-Memory";
 				PRODUCT_NAME = "Music Hop";
 				PROVISIONING_PROFILE_SPECIFIER = "";

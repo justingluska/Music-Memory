@@ -50,10 +50,9 @@ class ViewController: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        if let isFirstStart = UserDefaults.standard.value(forKey: "isFirstLaunch") as? Bool {
-            print("this is not the first launch")
+        if (UserDefaults.standard.value(forKey: "isFirstLaunch") as? Bool) != nil {
+            print("Not First Launch")
         } else {
-            print("this is the first launch")
             UserDefaults.standard.set(false, forKey: "isFirstLaunch")
             UserDefaults.standard.synchronize()
 
@@ -62,6 +61,8 @@ class ViewController: UIViewController {
             self.present(vc, animated: true, completion: nil)
         }
     }
+    
+    
     
     var calendar = Calendar.current
     let date = Date()
@@ -102,7 +103,6 @@ class ViewController: UIViewController {
     }
     
     var songArray: NSMutableArray = []
-        
     
 }
 
