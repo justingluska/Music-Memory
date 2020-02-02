@@ -31,8 +31,8 @@ class InterestCollectionViewCell: UICollectionViewCell
     }
     
     func updateUI(){
-        playSongOutlet.isEnabled = false
-        playSongOutlet.isHidden = true
+        playSongOutlet.isEnabled = true
+        playSongOutlet.isHidden = false
         featuredImageView.layer.cornerRadius = 15
         test.layer.cornerRadius = 15
         featuredImageView.backgroundColor = UIColor.white
@@ -57,6 +57,11 @@ class InterestCollectionViewCell: UICollectionViewCell
         let format = DateFormatter()
         format.dateFormat = "MM/dd/yyyy"
         let lastPlayedFormatted = format.string(from: timeLastPlayed)
+    
+//        let darkBlur = UIBlurEffect(style: .light)
+//        let blurView = UIVisualEffectView(effect: darkBlur)
+//        blurView.frame = featuredImageView.bounds
+//        featuredImageView.addSubview(blurView)
         
         let title = self.dataSource.title ?? "Unknown Name"
         let artist = "By \(self.dataSource.artist ?? "Unknown Artist")"

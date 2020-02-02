@@ -15,6 +15,7 @@
 		D095ABBF23C97FC600445B3F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095ABBE23C97FC600445B3F /* SettingsViewController.swift */; };
 		D096B11323BEF1E800C857E6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D096B11223BEF1E800C857E6 /* splash.png */; };
 		D096B11723BEF6F900C857E6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096B11623BEF6F900C857E6 /* PageViewController.swift */; };
+		D09A7F0023E783E800987075 /* miami.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D09A7EFF23E783E800987075 /* miami.mp4 */; };
 		D0B2088F23B45B5100E361C4 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */; };
 		D0C6194D23BF002800B22506 /* unknownArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C6194C23BF002800B22506 /* unknownArtwork.png */; };
 		D0C7D40023C01217003F8B40 /* sbMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C7D3FF23C01217003F8B40 /* sbMainViewController.swift */; };
@@ -38,6 +39,7 @@
 		D095ABBE23C97FC600445B3F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D096B11223BEF1E800C857E6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = SOURCE_ROOT; };
 		D096B11623BEF6F900C857E6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		D09A7EFF23E783E800987075 /* miami.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = miami.mp4; sourceTree = SOURCE_ROOT; };
 		D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0C6194C23BF002800B22506 /* unknownArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknownArtwork.png; sourceTree = SOURCE_ROOT; };
 		D0C7D3FF23C01217003F8B40 /* sbMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sbMainViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				D064B09723C178A80047A54E /* blue.mp4 */,
 				D064B09923C17DBF0047A54E /* Sanchezregular.otf */,
 				D0C6194C23BF002800B22506 /* unknownArtwork.png */,
+				D09A7EFF23E783E800987075 /* miami.mp4 */,
 			);
 			path = "Music Memory";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				D064B09A23C17DBF0047A54E /* Sanchezregular.otf in Resources */,
 				D0F5A4D923B0886700EEC6D8 /* LaunchScreen.storyboard in Resources */,
+				D09A7F0023E783E800987075 /* miami.mp4 in Resources */,
 				D0F5A4D623B0886700EEC6D8 /* Assets.xcassets in Resources */,
 				D0F5A4D123B0886400EEC6D8 /* Main.storyboard in Resources */,
 				D049F31823C1623C004F7CFE /* help.png in Resources */,

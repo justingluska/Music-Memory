@@ -85,7 +85,7 @@ class InterestsViewController: UIViewController
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        try? VideoBackground.shared.play(view: view, videoName: "blue", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "miami", videoType: "mp4")
         let date = Date()
         let format = DateFormatter()
         format.dateFormat = "LLL"
@@ -105,7 +105,7 @@ class InterestsViewController: UIViewController
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9134328104554845/9661741527")
         let request = GADRequest()
         interstitial.load(request)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
             self.interstitial.present(fromRootViewController: self)
         }
         let temp = Int.random(in: 0 ..< 10)
