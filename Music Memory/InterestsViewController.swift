@@ -83,6 +83,7 @@ class InterestsViewController: UIViewController
     @IBOutlet weak var imageCollect: UIImageView!
     var dataSource : MusicWithDate = MusicWithDate()
     
+    @IBOutlet weak var pauseOutlet: UIButton!
     override func viewDidLoad(){
         super.viewDidLoad()
         try? VideoBackground.shared.play(view: view, videoName: "miami", videoType: "mp4")

@@ -16,13 +16,27 @@ class InterestCollectionViewCell: UICollectionViewCell
     @IBOutlet weak var test: UIImageView!
     
     @IBOutlet weak var playSongOutlet: UIButton!
+    
+    let musicPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
+    
+    var temp:[String] = []
+    
+    @IBOutlet weak var pauseOutlet: UIButton!
+    
     @IBAction func playSong(_ sender: Any) {
-        var temp:[String] = []
         temp.append(dataSource.playbackStoreID)
-        let musicPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
         musicPlayer.setQueue(with: temp)
         musicPlayer.play()
+        pauseOutlet.isHidden = false
+        playSongOutlet.isHidden = true
     }
+    
+    @IBAction func pauseSong(_ sender: Any) {
+        musicPlayer.pause()
+        pauseOutlet.isHidden = true
+        playSongOutlet.isHidden = false
+    }
+    
     
     var dataSource: MPMediaItem! {
         didSet {
@@ -33,6 +47,7 @@ class InterestCollectionViewCell: UICollectionViewCell
     func updateUI(){
         playSongOutlet.isEnabled = true
         playSongOutlet.isHidden = false
+        pauseOutlet.isHidden = true
         featuredImageView.layer.cornerRadius = 15
         test.layer.cornerRadius = 15
         featuredImageView.backgroundColor = UIColor.white
