@@ -106,7 +106,7 @@ class InterestsViewController: UIViewController
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9134328104554845/9661741527")
         let request = GADRequest()
         interstitial.load(request)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
             self.interstitial.present(fromRootViewController: self)
         }
         let temp = Int.random(in: 0 ..< 10)

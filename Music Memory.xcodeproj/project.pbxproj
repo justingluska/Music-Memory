@@ -414,7 +414,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.justingluska.Music-Memory";
 				PRODUCT_NAME = "Music Hop";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -437,7 +437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.justingluska.Music-Memory";
 				PRODUCT_NAME = "Music Hop";
 				PROVISIONING_PROFILE_SPECIFIER = "";
