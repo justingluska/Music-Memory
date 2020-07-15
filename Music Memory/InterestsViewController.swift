@@ -18,6 +18,7 @@ class InterestsViewController: UIViewController
     @IBOutlet weak var shareOutlet: UIButton!
     @IBOutlet weak var backOutlet: UIButton!
     
+    
     @IBAction func shareSongs(_ sender: Any) {
         var songName = [String]()
         guard let songs = MPMediaQuery.songs().items
@@ -155,16 +156,16 @@ extension InterestsViewController: UICollectionViewDataSource
 }
 
 
-/// Not really sure what this does. I found it on a tutorial
+/// Not really sure what this does. I found it on YouTube
 extension InterestsViewController : UIScrollViewDelegate, UICollectionViewDelegate
 {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-        var offset = targetContentOffset.pointee
-        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
-        let roundedIndex = round(index)
-        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
-        targetContentOffset.pointee = offset
-    }
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+//        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+//        var offset = targetContentOffset.pointee
+//        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+//        let roundedIndex = round(index)
+//        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
+//        targetContentOffset.pointee = offset
+//    }
 }

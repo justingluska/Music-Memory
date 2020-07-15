@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -393,7 +393,7 @@
                                 <rect key="frame" x="50" y="549" width="275" height="37"/>
                                 <color key="backgroundColor" red="0.41517290609137059" green="0.14815067160450709" blue="0.1522502833013589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
-                                <state key="normal" title="Share with Friends">
+                                <state key="normal" title="Share Today">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -401,7 +401,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpm-9J-thy">
-                                <rect key="frame" x="50" y="610" width="275" height="37"/>
+                                <rect key="frame" x="25" y="610" width="325" height="37"/>
                                 <color key="backgroundColor" red="0.41517290609137059" green="0.14815067160450709" blue="0.1522502833013589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
                                 <state key="normal" title="Go Back">
@@ -414,11 +414,11 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="InterestsViewController" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H2K-xJ-B1J">
                                 <rect key="frame" x="5" y="122.5" width="365" height="401.5"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="20" id="cP7-xB-BlX">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="20" id="cP7-xB-BlX">
                                     <size key="itemSize" width="382" height="388"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="20" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterestCollectionViewCell" id="PrH-63-kw7" customClass="InterestCollectionViewCell" customModule="Music_Hop" customModuleProvider="target">
@@ -472,6 +472,14 @@
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmD-dq-Who">
+                                                    <rect key="frame" x="270" y="350" width="76" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="share song"/>
+                                                    <connections>
+                                                        <action selector="shareCurrent:" destination="PrH-63-kw7" eventType="touchUpInside" id="PTe-hg-W4Q"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -528,23 +536,23 @@
                             <constraint firstItem="H2K-xJ-B1J" firstAttribute="top" secondItem="SE8-vs-TOp" secondAttribute="bottom" constant="16" id="7Ll-3b-w0y"/>
                             <constraint firstItem="SE8-vs-TOp" firstAttribute="top" secondItem="6rt-za-V6e" secondAttribute="bottom" constant="15" id="DZC-XG-lx3"/>
                             <constraint firstItem="iqx-eJ-W8i" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="50" id="EI3-Y5-Pfi"/>
-                            <constraint firstItem="H2K-xJ-B1J" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="5" id="F9s-lt-97m"/>
                             <constraint firstItem="u2y-up-pmV" firstAttribute="top" secondItem="6rt-za-V6e" secondAttribute="bottom" constant="1" id="Foh-0k-MbC"/>
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="6rt-za-V6e" secondAttribute="trailing" constant="18" id="GrO-qj-swf"/>
                             <constraint firstItem="SE8-vs-TOp" firstAttribute="trailing" secondItem="9bs-fM-6tM" secondAttribute="trailingMargin" constant="5" id="PZo-1X-0z0"/>
-                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="Gpm-9J-thy" secondAttribute="trailing" constant="50" id="UGT-au-io8"/>
+                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="Gpm-9J-thy" secondAttribute="trailing" constant="25" id="UGT-au-io8"/>
                             <constraint firstItem="WHp-C3-9Ty" firstAttribute="centerX" secondItem="9bs-fM-6tM" secondAttribute="centerX" id="UnL-yZ-Axd"/>
+                            <constraint firstItem="H2K-xJ-B1J" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="5" id="abM-dL-jda"/>
                             <constraint firstItem="iqx-eJ-W8i" firstAttribute="top" secondItem="H2K-xJ-B1J" secondAttribute="bottom" constant="25" id="aqY-CU-zc9"/>
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="bottom" secondItem="Gpm-9J-thy" secondAttribute="bottom" constant="20" id="atO-td-7K2"/>
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="iqx-eJ-W8i" secondAttribute="trailing" constant="50" id="dqD-ER-OSr"/>
-                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="H2K-xJ-B1J" secondAttribute="trailing" constant="5" id="eRx-Y2-ypi"/>
                             <constraint firstItem="WHp-C3-9Ty" firstAttribute="centerY" secondItem="9bs-fM-6tM" secondAttribute="centerY" id="gXa-f2-mRo"/>
                             <constraint firstItem="u2y-up-pmV" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="18" id="gdy-3P-waU"/>
                             <constraint firstItem="SE8-vs-TOp" firstAttribute="leading" secondItem="9bs-fM-6tM" secondAttribute="leadingMargin" constant="5" id="iAf-vW-BcN"/>
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="u2y-up-pmV" secondAttribute="trailing" constant="18" id="r6b-Eg-4rg"/>
                             <constraint firstItem="6rt-za-V6e" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="18" id="vCB-xp-ROj"/>
                             <constraint firstItem="LEm-MZ-FNm" firstAttribute="bottom" secondItem="H2K-xJ-B1J" secondAttribute="bottom" constant="143" id="wM0-4B-bxV"/>
-                            <constraint firstItem="Gpm-9J-thy" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="50" id="zlC-Fv-29o"/>
+                            <constraint firstItem="LEm-MZ-FNm" firstAttribute="trailing" secondItem="H2K-xJ-B1J" secondAttribute="trailing" constant="5" id="zXd-ZD-Hv3"/>
+                            <constraint firstItem="Gpm-9J-thy" firstAttribute="leading" secondItem="LEm-MZ-FNm" secondAttribute="leading" constant="25" id="zlC-Fv-29o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LEm-MZ-FNm"/>
                     </view>

@@ -19,11 +19,18 @@ class InterestCollectionViewCell: UICollectionViewCell
     
     let musicPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
     
-    var temp:[String] = []
+
     
     @IBOutlet weak var pauseOutlet: UIButton!
     
+    @IBAction func shareCurrent(_ sender: Any) {
+        var currentSongArray:[String] = []
+        currentSongArray.append(dataSource.title ?? "Song Name")
+        print(currentSongArray[0])
+    }
+    
     @IBAction func playSong(_ sender: Any) {
+        var temp:[String] = []
         temp.append(dataSource.playbackStoreID)
         musicPlayer.setQueue(with: temp)
         musicPlayer.play()
