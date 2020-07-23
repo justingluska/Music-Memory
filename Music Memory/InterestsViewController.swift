@@ -60,8 +60,8 @@ class InterestsViewController: UIViewController
         // , URL(string: "https://apps.apple.com/us/app/music-hop-daily-throwbacks/id1494063897")!
         /// To add the album artwork, use the code below
         // , imageViewOutlet.image!
-        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true)
+            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            present(ac, animated: true)
     }
     
     @IBOutlet weak var todaysDate: UILabel!
@@ -86,8 +86,11 @@ class InterestsViewController: UIViewController
     
     @IBOutlet weak var pauseOutlet: UIButton!
     override func viewDidLoad(){
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            shareOutlet.isHidden = true
+        }
         super.viewDidLoad()
-        try? VideoBackground.shared.play(view: view, videoName: "miami", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "starstrip", videoType: "mp4")
         let date = Date()
         let format = DateFormatter()
         format.dateFormat = "LLL"

@@ -5,7 +5,41 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         leaveReviewOutlet.layer.cornerRadius = 15
         shareOutlet.layer.cornerRadius = 15
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsViewController.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
+        if (UIDevice.current.orientation == .landscapeLeft) {
+            backOutlet.isHidden = false
+        }
+        if (UIDevice.current.orientation == .landscapeRight) {
+            backOutlet.isHidden = false
+        }
+        if (UIDevice.current.orientation == .portrait) {
+            backOutlet.isHidden = true
+        }
+        if (UIDevice.current.orientation == .portraitUpsideDown) {
+            backOutlet.isHidden = true
+        }
     }
+    
+    deinit {
+       NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+    
+    @objc func rotated() {
+        if (UIDevice.current.orientation == .landscapeLeft) {
+            backOutlet.isHidden = false
+        }
+        if (UIDevice.current.orientation == .landscapeRight) {
+            backOutlet.isHidden = false
+        }
+        if (UIDevice.current.orientation == .portrait) {
+            backOutlet.isHidden = true
+        }
+        if (UIDevice.current.orientation == .portraitUpsideDown) {
+            backOutlet.isHidden = true
+        }
+    }
+    
+    @IBOutlet weak var backOutlet: UIButton!
     
     @IBOutlet weak var leaveReviewOutlet: UIButton!
     @IBOutlet weak var shareOutlet: UIButton!
