@@ -3,17 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47C4E6D8536488F67CAB9CA2 /* Pods_Music_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA94E8B671BBDC3F81079C0 /* Pods_Music_Memory.framework */; };
 		D0133DB423C55668004A6FEA /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0133DB323C55668004A6FEA /* InterestsViewController.swift */; };
 		D049F31823C1623C004F7CFE /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = D049F31723C1623C004F7CFE /* help.png */; };
 		D064B09A23C17DBF0047A54E /* Sanchezregular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D064B09923C17DBF0047A54E /* Sanchezregular.otf */; };
-		D06D4D9424C6A1C90048C996 /* starstrip.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D06D4D9324C6A1C90048C996 /* starstrip.mp4 */; };
 		D095ABBF23C97FC600445B3F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095ABBE23C97FC600445B3F /* SettingsViewController.swift */; };
 		D096B11323BEF1E800C857E6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D096B11223BEF1E800C857E6 /* splash.png */; };
 		D096B11723BEF6F900C857E6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096B11623BEF6F900C857E6 /* PageViewController.swift */; };
+		D0AE691524CA0875005FC386 /* Music_Memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0AE691424CA0875005FC386 /* Music_Memory.xcdatamodeld */; };
+		D0AE691724CA0898005FC386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AE691624CA0898005FC386 /* Assets.xcassets */; };
 		D0B2088F23B45B5100E361C4 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */; };
 		D0C6194D23BF002800B22506 /* unknownArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C6194C23BF002800B22506 /* unknownArtwork.png */; };
 		D0C7D40023C01217003F8B40 /* sbMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C7D3FF23C01217003F8B40 /* sbMainViewController.swift */; };
@@ -21,21 +23,23 @@
 		D0F5A4CC23B0886400EEC6D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5A4CB23B0886400EEC6D8 /* SceneDelegate.swift */; };
 		D0F5A4CE23B0886400EEC6D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F5A4CD23B0886400EEC6D8 /* ViewController.swift */; };
 		D0F5A4D123B0886400EEC6D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F5A4CF23B0886400EEC6D8 /* Main.storyboard */; };
-		D0F5A4D423B0886400EEC6D8 /* Music_Memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0F5A4D223B0886400EEC6D8 /* Music_Memory.xcdatamodeld */; };
 		D0F5A4D623B0886700EEC6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F5A4D523B0886700EEC6D8 /* Assets.xcassets */; };
 		D0F5A4D923B0886700EEC6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F5A4D723B0886700EEC6D8 /* LaunchScreen.storyboard */; };
 		D0FB853323C189D900AB35E6 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FB853223C189D900AB35E6 /* PermissionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		227AA3B60344370B9FE039C4 /* Pods-Music Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Memory.release.xcconfig"; path = "Target Support Files/Pods-Music Memory/Pods-Music Memory.release.xcconfig"; sourceTree = "<group>"; };
+		4CA94E8B671BBDC3F81079C0 /* Pods_Music_Memory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_Memory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7414559D346CAB8D1DC8D228 /* Pods-Music Memory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Memory.debug.xcconfig"; path = "Target Support Files/Pods-Music Memory/Pods-Music Memory.debug.xcconfig"; sourceTree = "<group>"; };
 		D0133DB323C55668004A6FEA /* InterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
 		D046CC5524C90CA200DDC1CD /* Music Hop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Music Hop.entitlements"; sourceTree = "<group>"; };
 		D049F31723C1623C004F7CFE /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = SOURCE_ROOT; };
 		D064B09923C17DBF0047A54E /* Sanchezregular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sanchezregular.otf; sourceTree = SOURCE_ROOT; };
-		D06D4D9324C6A1C90048C996 /* starstrip.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = starstrip.mp4; sourceTree = SOURCE_ROOT; };
 		D095ABBE23C97FC600445B3F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D096B11223BEF1E800C857E6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = SOURCE_ROOT; };
 		D096B11623BEF6F900C857E6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		D0AE691624CA0898005FC386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MusicMemory/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		D0B2088E23B45B5100E361C4 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0C6194C23BF002800B22506 /* unknownArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknownArtwork.png; sourceTree = SOURCE_ROOT; };
 		D0C7D3FF23C01217003F8B40 /* sbMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sbMainViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +48,6 @@
 		D0F5A4CB23B0886400EEC6D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D0F5A4CD23B0886400EEC6D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D0F5A4D023B0886400EEC6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D0F5A4D323B0886400EEC6D8 /* Music_Memory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Music_Memory.xcdatamodel; sourceTree = "<group>"; };
 		D0F5A4D523B0886700EEC6D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0F5A4D823B0886700EEC6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0F5A4DA23B0886700EEC6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47C4E6D8536488F67CAB9CA2 /* Pods_Music_Memory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31D9F5BD30A8A1A371E4CD64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7414559D346CAB8D1DC8D228 /* Pods-Music Memory.debug.xcconfig */,
+				227AA3B60344370B9FE039C4 /* Pods-Music Memory.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C938B00527735D89196D8619 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CA94E8B671BBDC3F81079C0 /* Pods_Music_Memory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0F5A4BD23B0886400EEC6D8 = {
 			isa = PBXGroup;
 			children = (
 				D0F5A4C823B0886400EEC6D8 /* Music Memory */,
 				D0F5A4C723B0886400EEC6D8 /* Products */,
+				31D9F5BD30A8A1A371E4CD64 /* Pods */,
+				C938B00527735D89196D8619 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +106,7 @@
 			children = (
 				D046CC5524C90CA200DDC1CD /* Music Hop.entitlements */,
 				D0F5A4CF23B0886400EEC6D8 /* Main.storyboard */,
+				D0AE691624CA0898005FC386 /* Assets.xcassets */,
 				D0F5A4D723B0886700EEC6D8 /* LaunchScreen.storyboard */,
 				D0F5A4C923B0886400EEC6D8 /* AppDelegate.swift */,
 				D0F5A4CB23B0886400EEC6D8 /* SceneDelegate.swift */,
@@ -95,9 +119,9 @@
 				D095ABBE23C97FC600445B3F /* SettingsViewController.swift */,
 				D0F5A4D523B0886700EEC6D8 /* Assets.xcassets */,
 				D096B11223BEF1E800C857E6 /* splash.png */,
+				D0AE691424CA0875005FC386 /* Music_Memory.xcdatamodeld */,
 				D0F5A4DA23B0886700EEC6D8 /* Info.plist */,
 				D049F31723C1623C004F7CFE /* help.png */,
-				D0F5A4D223B0886400EEC6D8 /* Music_Memory.xcdatamodeld */,
 				D064B09923C17DBF0047A54E /* Sanchezregular.otf */,
 				D0C6194C23BF002800B22506 /* unknownArtwork.png */,
 			);
@@ -111,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0F5A4DD23B0886700EEC6D8 /* Build configuration list for PBXNativeTarget "Music Memory" */;
 			buildPhases = (
+				6A79E71F700077FB6F9CCC08 /* [CP] Check Pods Manifest.lock */,
 				D0F5A4C223B0886400EEC6D8 /* Sources */,
 				D0F5A4C323B0886400EEC6D8 /* Frameworks */,
 				D0F5A4C423B0886400EEC6D8 /* Resources */,
+				A2400D6429F4D7C826F0B561 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,11 +194,54 @@
 				D0F5A4D123B0886400EEC6D8 /* Main.storyboard in Resources */,
 				D049F31823C1623C004F7CFE /* help.png in Resources */,
 				D0C6194D23BF002800B22506 /* unknownArtwork.png in Resources */,
+				D0AE691724CA0898005FC386 /* Assets.xcassets in Resources */,
 				D096B11323BEF1E800C857E6 /* splash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A79E71F700077FB6F9CCC08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Music Memory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2400D6429F4D7C826F0B561 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Music Memory/Pods-Music Memory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Music Memory/Pods-Music Memory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Music Memory/Pods-Music Memory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0F5A4C223B0886400EEC6D8 /* Sources */ = {
@@ -181,9 +250,9 @@
 			files = (
 				D0B2088F23B45B5100E361C4 /* InterestCollectionViewCell.swift in Sources */,
 				D0F5A4CE23B0886400EEC6D8 /* ViewController.swift in Sources */,
+				D0AE691524CA0875005FC386 /* Music_Memory.xcdatamodeld in Sources */,
 				D095ABBF23C97FC600445B3F /* SettingsViewController.swift in Sources */,
 				D0F5A4CA23B0886400EEC6D8 /* AppDelegate.swift in Sources */,
-				D0F5A4D423B0886400EEC6D8 /* Music_Memory.xcdatamodeld in Sources */,
 				D0133DB423C55668004A6FEA /* InterestsViewController.swift in Sources */,
 				D0C7D40023C01217003F8B40 /* sbMainViewController.swift in Sources */,
 				D096B11723BEF6F900C857E6 /* PageViewController.swift in Sources */,
@@ -330,8 +399,8 @@
 		};
 		D0F5A4DE23B0886700EEC6D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7414559D346CAB8D1DC8D228 /* Pods-Music Memory.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Music Memory/Music Hop.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -353,8 +422,8 @@
 		};
 		D0F5A4DF23B0886700EEC6D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227AA3B60344370B9FE039C4 /* Pods-Music Memory.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Music Memory/Music Hop.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -398,13 +467,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D0F5A4D223B0886400EEC6D8 /* Music_Memory.xcdatamodeld */ = {
+		D0AE691424CA0875005FC386 /* Music_Memory.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D0F5A4D323B0886400EEC6D8 /* Music_Memory.xcdatamodel */,
 			);
-			currentVersion = D0F5A4D323B0886400EEC6D8 /* Music_Memory.xcdatamodel */;
-			path = Music_Memory.xcdatamodeld;
+			name = Music_Memory.xcdatamodeld;
+			path = ../Music_Memory.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
